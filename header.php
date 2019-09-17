@@ -89,7 +89,7 @@ function googleTranslateElementInit() {
 </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
         </li>						
 						<?php get_search_form( ); ?>
-						<a href="http://www.england.nhs.uk/ourwork/qual-clin-lead/calltoaction/pm-ext-access/" target="_blank"><img src="/wp-content/uploads/2014/11/NHS-logo.png" alt="The NHS logo" class="nhs_logo" width="54"></a>
+						<a href="http://www.england.nhs.uk/ourwork/qual-clin-lead/calltoaction/pm-ext-access/" target="_blank"><img src="<?php echo get_site_url(); ?>/wp-content/uploads/2014/11/NHS-logo.png" alt="The NHS logo" class="nhs_logo" width="54"></a>
 					</ul>
 				</div>
 
@@ -99,7 +99,7 @@ function googleTranslateElementInit() {
 				<div id="main_header">
 				  <div class="inline_block">
 					<div class="main_header_2_columns">
-						<a href="/"><img src="/wp-content/uploads/2014/10/one_care_logo_retina.png" width="253px" alt="One Care Logo" class="onecare_logo" /></a>
+						<a href="/"><img src="<?php echo get_site_url(); ?>/wp-content/uploads/2014/10/one_care_logo_retina.png" width="253px" alt="One Care Logo" class="onecare_logo" /></a>
 					</div>
 					<div class="main_header_2_columns main_header_right_column">
 						<h2 class="slogan_mobile">Enabling general practice to both survive and thrive</h2>
@@ -108,20 +108,20 @@ function googleTranslateElementInit() {
 
 					<div id="navbar" class="navbar">
 						<div id="mobile_search">
-							<button class="search_button"><img src="/wp-content/themes/twentythirteen-child-01/images/search_icon.png" alt="Search icon" width="24"></button>
+							<button class="search_button"><img src="<?php echo get_site_url(); ?>/wp-content/themes/twentythirteen-child-01/images/search_icon.png" alt="Search icon" width="24"></button>
 						</div>
 						<div id="mobile_logo">
-							<a href="/"><img src="/wp-content/themes/twentythirteen-child-01/images/one_care_logo_white.png" alt="One Care Logo" width="120" /></a>
+							<a href="/"><img src="<?php echo get_site_url(); ?>/wp-content/themes/twentythirteen-child-01/images/one_care_logo_white.png" alt="One Care Logo" width="120" /></a>
 						</div>
 						<nav id="site-navigation" class="navigation main-navigation" role="navigation">
 							<button class="menu-toggle menu_animation mobile_menu_animation"><?php _e( '', 'twentythirteen' ); ?><span></span></button>
 							<a class="screen-reader-text skip-link" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentythirteen' ); ?>"><?php _e( 'Skip to content', 'twentythirteen' ); ?></a>
 							<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
 							<div id="mobile_social">
-   							  <a href="/contact"><img src="/wp-content/uploads/2014/10/header_phone_icon.png" alt="telephone icon" width="24"></a>
-   							  <a href="mailto:enquiries@onecare.org.uk"><img src="/wp-content/uploads/2014/10/header_email_icon.png" alt="email icon" width="24"></a>
-   							  <a href="https://twitter.com/onecaretweets" target="_blank"><img src="/wp-content/uploads/2014/10/header_twitter_icon.png" alt="twitter icon" width="24"></a>
-							  <a href="https://www.facebook.com/One-Care-BNSSG-Ltd-2051923954868275/" target="_blank"><img src="/wp-content/uploads/2018/12/header_facebook_icon.png" alt="facebook icon" width="24"></a>
+   							  <a href="/contact"><img src="<?php echo get_site_url(); ?><?php echo get_site_url(); ?>/wp-content/uploads/2014/10/header_phone_icon.png" alt="telephone icon" width="24"></a>
+   							  <a href="mailto:enquiries@onecare.org.uk"><img src="<?php echo get_site_url(); ?>/wp-content/uploads/2014/10/header_email_icon.png" alt="email icon" width="24"></a>
+   							  <a href="https://twitter.com/onecaretweets" target="_blank"><img src="<?php echo get_site_url(); ?>/wp-content/uploads/2014/10/header_twitter_icon.png" alt="twitter icon" width="24"></a>
+							  <a href="https://www.facebook.com/One-Care-BNSSG-Ltd-2051923954868275/" target="_blank"><img src="<?php echo get_site_url(); ?>/wp-content/uploads/2018/12/header_facebook_icon.png" alt="facebook icon" width="24"></a>
 
 							<div class="intranet_mobile"><a href="https://portal.gpteamnet.co.uk/Topics/Public/d2091920-33c1-4a41-9c5c-a80b00a9c4f7" title="One Care portal" alt="One Care portal" target="_blank">One Care portal</a>
 							</div>
@@ -136,12 +136,12 @@ function googleTranslateElementInit() {
 							</div>
 						
 							<div class="footer_icon social_icons">
-   								<a href="/contact"><img src="/wp-content/uploads/2014/10/header_phone_icon.png" alt="telephone icon" class="social_icon_image" width="24">
+   								<a href="/contact"><img src="<?php echo get_site_url(); ?>/wp-content/uploads/2014/10/header_phone_icon.png" alt="telephone icon" class="social_icon_image" width="24">
     								</a>
 							</div>
 
 							<div class="footer_icon social_icons">
-   								<a href="mailto:enquiries@onecare.org.uk"><img src="/wp-content/uploads/2014/10/header_email_icon.png" alt="email icon" class="social_icon_image" width="24">
+   								<a href="mailto:enquiries@onecare.org.uk"><img src="<?php echo get_site_url(); ?>/wp-content/uploads/2014/10/header_email_icon.png" alt="email icon" class="social_icon_image" width="24">
     								</a>
 							</div>
 
@@ -152,12 +152,12 @@ function googleTranslateElementInit() {
 							</div> -->
 
 							<div class="footer_icon social_icons">
-   								<a href="https://twitter.com/onecaretweets" target="_blank"><img src="/wp-content/uploads/2014/10/header_twitter_icon.png" alt="twitter icon" class="social_icon_image" width="24">
+   								<a href="https://twitter.com/onecaretweets" target="_blank"><img src="<?php echo get_site_url(); ?>/wp-content/uploads/2014/10/header_twitter_icon.png" alt="twitter icon" class="social_icon_image" width="24">
     								</a>
 							</div>
 							
 							<div class="footer_icon social_icons">
-   								<a href="https://www.facebook.com/One-Care-BNSSG-Ltd-2051923954868275/" target="_blank"><img src="/wp-content/uploads/2018/12/header_facebook_icon.png" alt="facebook icon" class="social_icon_image" width="24">
+   								<a href="https://www.facebook.com/One-Care-BNSSG-Ltd-2051923954868275/" target="_blank"><img src="<?php echo get_site_url(); ?>/wp-content/uploads/2018/12/header_facebook_icon.png" alt="facebook icon" class="social_icon_image" width="24">
     								</a>
 							</div>
 

@@ -26,12 +26,12 @@
 				<div id="header_social" class="footer_social_override">
 						
 							<div class="footer_icon social_icons">
-   								<a href="/contact"><img src="/wp-content/uploads/2014/10/footer_phone_icon.png" alt="telephone icon" class="social_icon_image" width="24">
+   								<a href="/contact"><img src="<?php echo get_site_url(); ?>/wp-content/uploads/2014/10/footer_phone_icon.png" alt="telephone icon" class="social_icon_image" width="24">
     								</a>
 							</div>
 
 							<div class="footer_icon social_icons">
-   								<a href="mailto:enquiries@onecare.org.uk"><img src="/wp-content/uploads/2014/10/footer_email_icon.png" alt="email icon" class="social_icon_image" width="24">
+   								<a href="mailto:enquiries@onecare.org.uk"><img src="<?php echo get_site_url(); ?>/wp-content/uploads/2014/10/footer_email_icon.png" alt="email icon" class="social_icon_image" width="24">
     								</a>
 							</div>
 
@@ -42,12 +42,12 @@
 							</div> -->
 
 							<div class="footer_icon social_icons">
-   								<a href="https://twitter.com/onecaretweets" target="_blank"><img src="/wp-content/uploads/2014/10/footer_twitter_icon.png" alt="twitter icon" class="social_icon_image" width="24">
+   								<a href="https://twitter.com/onecaretweets" target="_blank"><img src="<?php echo get_site_url(); ?>/wp-content/uploads/2014/10/footer_twitter_icon.png" alt="twitter icon" class="social_icon_image" width="24">
     								</a>
 							</div>
 					
 					<div class="footer_icon social_icons">
-   								<a href="https://www.facebook.com/One-Care-BNSSG-Ltd-2051923954868275/" target="_blank"><img src="/wp-content/uploads/2018/12/footer_facebook_icon.png" alt="facebook icon" class="social_icon_image" width="24">
+   								<a href="https://www.facebook.com/One-Care-BNSSG-Ltd-2051923954868275/" target="_blank"><img src="<?php echo get_site_url(); ?>/wp-content/uploads/2018/12/footer_facebook_icon.png" alt="facebook icon" class="social_icon_image" width="24">
     								</a>
 							</div>
 
