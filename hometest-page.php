@@ -8,35 +8,96 @@
 
 get_header(); ?>
 
-	<div id="homepage_slider">
-	  <div id="homepage_slider_boxes">
-		  <div class="container">
-			<?php if(get_field('hero_image')): ?>
-			  <?php while(has_sub_field('hero_image')): ?>
-				<p><strong><?php the_sub_field('subheader'); ?></strong></p>
-				<h2><?php the_sub_field('header'); ?></h2>
-				<div class="slide_text_2"><?php the_sub_field('copy'); ?></div>
-				<a href="<?php the_sub_field('link'); ?>" class="read_more">Read more ></a>
-				<div id="slide_image">
-					<img src="<?php echo get_site_url(); ?>/wp-content/uploads/2017/06/OC_map_V05_DP_01062017.png" alt="One Care logo in a speech bubble">
-				</div>
-			  <?php endwhile; ?>
-			<?php endif; ?>
-		  </div>
-	  </div>
-	</div>
-<?php while ( have_posts() ) : the_post(); ?>
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content homepage_content" role="main">
-				<div id="homepage_map">
-					<?php echo do_shortcode('[gmw_global_map form="1"]'); ?>
-				</div>
-		</div>
-	</div>
-<?php endwhile; ?>
+<?php while ( have_posts() ) : the_post (); ?>
+<section class="home_header">
+  <div class="container">
+    <div class="five columns">
+      <h2>We’ve re-launched our programme of practice and primary care services</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <a href="#" class="btn white">About services</a>
+    </div>
+  </div>
+</section>
+<!-- Services -->
+<section class="our_services">
+  <div class="container">
+    <div class="alignment">
+      <div class="eight columns offset-by-two">
+        <h3>Our services</h3>
+        <p>Services to practices, primary care networks and localities. Paid-for services are offered to external audiences outside of our core stakeholder group.</p>
+      </div>
+      <div class="twelve columns">
+        
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Reports -->
+<section class="reports-full-width">
+  <div class="background"></div>
+  <div class="container">
+    <div class="reports one-half column">
+      <h3>General practice intelligence reports</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <div class="reports-icon one-half column">
 
-<?php wp_reset_query(); ?>
+    </div>
+  </div>
+</section>
+<!-- Browse -->
+<section class="browse">
+  <div class="container">
+    <div class="twelve columns">
+      <p>Browse and compare all of One Care’s primary care network services</p>
+  </div>
+</section>
+<!-- Support -->
+<section class="support">
+  <div class="container">
+    <div class="twelve columns">
+      <h3>Direct support for primary care networks</h3>
+      <p>Primary Care Networks (PCNs) can access all of One Care’s services, just as individual practices can. We’ve compiled a list of those services which we think are most relevant at PCN level, and described the support services which we offer specifically to PCNs.</p>
+  </div>
+</section>
+<!-- News -->
+<section class="news-full-width">
+  <div class="background"></div>
+  <div class="container">
+    <div class="news-icon one-half column">
 
-<?php get_sidebar(); ?>
+    </div>
+    <div class="latest-news one-half column">
+      <h3>Latest news</h3>
+      <div class="news-slider">
+      <?php $args = array('post_type'=> 'post','order' => 'DESC','post_status' => 'publish','posts_per_page'=> 1); query_posts($args); ?>
+        <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
+          <div class="news_item">
+            <div class="content">
+              <?php the_time('j F Y'); ?>
+              <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+              <?php the_excerpt(); ?>
+              <a href="<?php the_permalink(); ?>" class="button secondary reversed">Read more</a>
+            </div>
+          </div>
+        <?php endwhile; ?>
+      <?php else : endif; wp_reset_query(); ?>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Map -->
+<section class="map_heading">
+  <div class="container">
+    <div class="twelve columns">
+      <h3>Find your local practice or surgery</h3>
+      <p>Search for a One Care affiliated practise near you</p>
+    </div>
+  </div>
+</section>
+<div id="homepage_map">
+  <?php echo do_shortcode('[gmw_global_map form="1"]'); ?>
+</div>
+<?php endwhile; wp_reset_query(); ?>
 
 <?php get_footer(); ?>
