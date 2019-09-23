@@ -35,7 +35,7 @@
 
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<link href="/wp-content/themes/twentythirteen-child-01/media-queries.css" rel="stylesheet" type="text/css">
+	<link href="<?php echo get_stylesheet_directory_uri(); ?>/new.css" rel="stylesheet" type="text/css">
 
 	<!-- fonts -->
 
