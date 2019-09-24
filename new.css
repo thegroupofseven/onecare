@@ -109,18 +109,35 @@ section {
   overflow: hidden; }
 
 a.btn {
-  border: 1px solid #fff;
+  border: 1px solid #574658;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   border-radius: 5px;
-  color: #fff;
+  color: #574658;
   padding: 15px 20px;
-  font-size: 20px;
+  font-size: 18px;
   display: inline-block; }
-  a.btn.white:hover {
-    background: #fff;
-    color: #0e9899; }
+  a.btn:hover, a.btn.active {
+    border: 1px solid #ed1651;
+    background: #ed1651;
+    color: #fff; }
+    a.btn:hover:visited, a.btn.active:visited {
+      color: #fff; }
+  a.btn:visited {
+    color: #574658; }
+  a.btn.white {
+    border: 1px solid #fff;
+    color: #fff; }
+    a.btn.white:hover {
+      background: #fff;
+      color: #0e9899; }
+      a.btn.white:hover:visited {
+        color: #0e9899; }
+    a.btn.white:visited {
+      color: #fff; }
+  a.btn.wide {
+    padding: 15px 40px; }
 
 /* Header */
 .home_header {
@@ -246,3 +263,36 @@ a.btn {
     font-size: 36px; }
   .map_heading p {
     font-size: 20px; }
+
+/* Service Pages */
+.single_service, .archive_service {
+  padding: 60px 0px; }
+
+.service_filter {
+  padding-bottom: 60px;
+  text-align: center; }
+  .service_filter h1 {
+    margin-bottom: 20px; }
+  .service_filter p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 32px; }
+  .service_filter a.btn {
+    margin: 10px; }
+
+.service_list .service_item {
+  padding: 40px;
+  text-align: center;
+  margin-bottom: 40px;
+  border: 1px solid #e4e1e3;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px; }
+  .service_list .service_item:nth-child(3n+1) {
+    clear: left;
+    margin-left: 0; }
+  .service_list .service_item h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: normal; }

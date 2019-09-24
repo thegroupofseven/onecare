@@ -14,7 +14,7 @@ get_header(); ?>
     <div class="five columns">
       <h2>We’ve re-launched our programme of practice and primary care services</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a href="#" class="btn white">About services</a>
+      <a href="<?php echo get_site_url(); ?>/services" class="btn white">About services</a>
     </div>
   </div>
 </section>
