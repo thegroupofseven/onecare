@@ -6,6 +6,11 @@ $breakpoint-tablet: 768px;
 $breakpoint-laptop: 900px;
 $breakpoint-desktop: 1200px;
 
+// Colours
+
+$red: #ec1550;
+$white: #fff;
+
 // Grid
 .container {
   position: relative;
@@ -182,28 +187,28 @@ a.btn {
   font-size: 18px;
   display: inline-block;
   &:hover, &.active {
-    border: 1px solid #ed1651;
-    background: #ed1651;
-    color: #fff;
+    border: 1px solid $red;
+    background: $red;
+    color: $white;
     &:visited {
-      color: #fff;
+      color: $white;
     }
   }
   &:visited {
     color: #574658;
   }
   &.white {
-    border: 1px solid #fff;
-    color: #fff;
+    border: 1px solid $white;
+    color: $white;
     &:hover {
-      background: #fff;
+      background: $white;
       color: #0e9899;
       &:visited {
         color: #0e9899;
       }
     }
     &:visited {
-      color: #fff;
+      color: $white;
     }
   }
   &.wide {
@@ -213,12 +218,12 @@ a.btn {
 
 /* Header */
 .home_header {
-  color: #fff;
+  color: $white;
   padding: 120px 0px 240px 0px;
   background: url('images/header.svg') center bottom no-repeat;
   h2 {
     font-size: 32px;
-    color: #fff;
+    color: $white;
     margin-bottom: 30px;
   }
   p {
@@ -235,7 +240,7 @@ a.btn {
   .alignment {
     padding: 60px 40px;
     margin-top: -120px;
-    background: #fff;
+    background: $white;
     @include border-radius(10px 10px 0px 0px);
     overflow: hidden;
   }
@@ -254,7 +259,7 @@ a.btn {
   position: relative;
   @media (min-width: $breakpoint-tablet) {
     .background {
-      background: linear-gradient(90deg, #f8f8f8 50%, #ed1651 50%);
+      background: linear-gradient(90deg, #f8f8f8 50%, $red 50%);
       position: absolute;
       top: 0px;
       left: 0px;
@@ -274,10 +279,10 @@ a.btn {
 .reports-icon {
   z-index: 1;
   padding: 40px;
-  background: #ed1651;
-  color: #fff;
+  background: $red;
+  color: $white;
   h3 {
-    color: #fff;
+    color: $white;
   }
 }
 .reports {
@@ -285,15 +290,20 @@ a.btn {
   color: #574759;
   background: #f8f8f8;
   padding: 40px;
+  @media (min-width: $breakpoint-tablet) {
+  padding: 40px 40px 40px 0px;
+  }
 }
 
 /* Browse */
 .browse {
   background: #574759;
-  color: #fff;
+  color: $white;
   padding: 40px 0px;
   p {
+    font-size: 18px;
     margin-bottom: 0;
+    text-align: center;
   }
 }
 
@@ -301,6 +311,21 @@ a.btn {
 /* Support */
 .support {
   padding: 60px 0px;
+  .support_slider {
+    h3 {
+      font-size: 36px;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+  .image {
+    text-align: center;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
 }
     
 /* News */
@@ -334,19 +359,37 @@ a.btn {
   padding: 40px;
   background: #a72f8d url('images/news-bubbles.svg') left center no-repeat;
   background-size: contain;
-  color: #fff;
+  color: $white;
   h3 {
-    color: #fff;
+    color: $white;
   }
 }
 .latest-news {
   flex: 1;
   z-index: 1;
-  color: #fff;
+  color: $white;
   background: #574759;
   padding: 80px 40px;
   h3 {
     font-size: 36px;
+    margin-bottom: 20px;
+  }
+  .news_item {
+    h4 {
+      font-size: 24px;
+      margin: 10px 0px 20px 0px;
+      a {
+        color: $white;
+      }
+      
+    }
+    p {
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+    a.btn {
+      display: inline-block;
+    }
   }
 }
 
@@ -392,7 +435,8 @@ a.btn {
     margin-bottom: 40px;
     border: 1px solid #e4e1e3;
     @include border-radius(5px);
-    &:nth-child(3n+1) {
+    position: relative;
+    &:nth-child(4n+1) {
       clear: left;
       margin-left: 0;
     }
@@ -400,6 +444,28 @@ a.btn {
       font-size: 28px;
       margin-bottom: 20px;
       font-weight: normal;
+    }
+    .paid-for {
+      background: $red;
+      display: inline-block;
+      color: $white;
+      padding: 5px 15px;
+      @include border-radius(3px);
+      text-transform: uppercase;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 20px;
+    }
+    .service_icon {
+      @include border-radius(50%);
+      border: 1px solid #e4e1e3;
+      height: auto;
+      margin-bottom: 20px;
+      
+    }
+    .service_text {
+      
     }
   }
 }

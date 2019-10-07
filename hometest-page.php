@@ -27,7 +27,32 @@ get_header(); ?>
         <p>Services to practices, primary care networks and localities. Paid-for services are offered to external audiences outside of our core stakeholder group.</p>
       </div>
       <div class="twelve columns">
-        
+        <?php       
+        query_posts(array( 
+          'post_type' => 'services',
+          'showposts' => -1,
+          'orderby'   => 'rand',
+          'order'     => 'ASC',
+                
+        ));  
+        ?>
+        <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
+        <div class="service-scroll">
+          <?php $icon = get_field('service_icon'); ?>
+          <article>
+            <a href="<?php the_permalink(); ?>">
+            <div class="image">
+              <div class="border">
+              <img src="<?php echo $icon; ?>"/>
+              </div>
+            </div>
+            <div class="content">
+              <h3><?php the_title(); ?></h3>
+            </div></a>
+          </article>
+        <?php endwhile; ?>
+        </div>
+        <?php else : endif; wp_reset_query(); ?>
       </div>
     </div>
   </div>
@@ -49,24 +74,27 @@ get_header(); ?>
 <section class="browse">
   <div class="container">
     <div class="twelve columns">
-      <p>Browse and compare all of One Care’s primary care network services</p>
+      <p>Browse and compare all of One Care’s primary care network services</p> <a href="<?php echo get_site_url(); ?>/services" class="btn white">See all services</a>
   </div>
 </section>
 <!-- Support -->
 <section class="support">
   <div class="container">
-    <div class="twelve columns">
+    <div class="support_slider six columns">
       <h3>Direct support for primary care networks</h3>
       <p>Primary Care Networks (PCNs) can access all of One Care’s services, just as individual practices can. We’ve compiled a list of those services which we think are most relevant at PCN level, and described the support services which we offer specifically to PCNs.</p>
+      <a href="#" class="btn">Find out more</a>
+    </div>
+    <div class="image six columns">
+      <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/direct-support.svg" />
+    </div>
   </div>
 </section>
 <!-- News -->
 <section class="news-full-width">
   <div class="background"></div>
   <div class="container">
-    <div class="news-icon one-half column">
-
-    </div>
+    <div class="news-icon one-half column"></div>
     <div class="latest-news one-half column">
       <h3>Latest news</h3>
       <div class="news-slider">
@@ -74,10 +102,10 @@ get_header(); ?>
         <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
           <div class="news_item">
             <div class="content">
-              <?php the_time('j F Y'); ?>
+              <span class="date"><?php the_time('j F Y'); ?></span>
               <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
               <?php the_excerpt(); ?>
-              <a href="<?php the_permalink(); ?>" class="button secondary reversed">Read more</a>
+              <a href="<?php the_permalink(); ?>" class="btn white">Read more</a>
             </div>
           </div>
         <?php endwhile; ?>

@@ -119,8 +119,8 @@ a.btn {
   font-size: 18px;
   display: inline-block; }
   a.btn:hover, a.btn.active {
-    border: 1px solid #ed1651;
-    background: #ed1651;
+    border: 1px solid #ec1550;
+    background: #ec1550;
     color: #fff; }
     a.btn:hover:visited, a.btn.active:visited {
       color: #fff; }
@@ -176,7 +176,7 @@ a.btn {
   position: relative; }
   @media (min-width: 768px) {
     .reports-full-width .background {
-      background: linear-gradient(90deg, #f8f8f8 50%, #ed1651 50%);
+      background: linear-gradient(90deg, #f8f8f8 50%, #ec1550 50%);
       position: absolute;
       top: 0px;
       left: 0px;
@@ -192,7 +192,7 @@ a.btn {
 .reports-icon {
   z-index: 1;
   padding: 40px;
-  background: #ed1651;
+  background: #ec1550;
   color: #fff; }
   .reports-icon h3 {
     color: #fff; }
@@ -202,6 +202,9 @@ a.btn {
   color: #574759;
   background: #f8f8f8;
   padding: 40px; }
+  @media (min-width: 768px) {
+    .reports {
+      padding: 40px 40px 40px 0px; } }
 
 /* Browse */
 .browse {
@@ -209,11 +212,22 @@ a.btn {
   color: #fff;
   padding: 40px 0px; }
   .browse p {
-    margin-bottom: 0; }
+    font-size: 18px;
+    margin-bottom: 0;
+    text-align: center; }
 
 /* Support */
 .support {
   padding: 60px 0px; }
+  .support .support_slider h3 {
+    font-size: 36px; }
+  .support .support_slider p {
+    font-size: 20px; }
+  .support .image {
+    text-align: center; }
+    .support .image img {
+      max-width: 100%;
+      height: auto; }
 
 /* News */
 .news-full-width {
@@ -253,7 +267,18 @@ a.btn {
   background: #574759;
   padding: 80px 40px; }
   .latest-news h3 {
-    font-size: 36px; }
+    font-size: 36px;
+    margin-bottom: 20px; }
+  .latest-news .news_item h4 {
+    font-size: 24px;
+    margin: 10px 0px 20px 0px; }
+    .latest-news .news_item h4 a {
+      color: #fff; }
+  .latest-news .news_item p {
+    font-size: 18px;
+    margin-bottom: 40px; }
+  .latest-news .news_item a.btn {
+    display: inline-block; }
 
 /* Map */
 .map_heading {
@@ -288,11 +313,34 @@ a.btn {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
-  border-radius: 5px; }
-  .service_list .service_item:nth-child(3n+1) {
+  border-radius: 5px;
+  position: relative; }
+  .service_list .service_item:nth-child(4n+1) {
     clear: left;
     margin-left: 0; }
   .service_list .service_item h3 {
     font-size: 28px;
     margin-bottom: 20px;
     font-weight: normal; }
+  .service_list .service_item .paid-for {
+    background: #ec1550;
+    display: inline-block;
+    color: #fff;
+    padding: 5px 15px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20px; }
+  .service_list .service_item .service_icon {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    border: 1px solid #e4e1e3;
+    height: auto;
+    margin-bottom: 20px; }

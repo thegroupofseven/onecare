@@ -6,7 +6,7 @@
  * @subpackage Twenty_Thirteen
  * @since Twenty Thirteen 1.0
  */
-
+ 
 get_header(); ?>
 
 <?php if ( have_posts() ) : ?>
@@ -19,9 +19,17 @@ get_header(); ?>
     </div>
     <div class="service_list twelve columns">
       <?php while ( have_posts() ) : the_post(); ?>
-        <div class="service_item one-third column">
+      
+        <?php $terms = get_the_terms( $post->ID, 'type' ); ?>
+        <div class="service_item <?php foreach($terms as $term) { echo $term->slug; } ?> three columns">
+          <?php if ($term->slug == "paid") { ?><div class="paid-for">Paid-for</div><?php } ?>
+          <div class="service_icon">
+            <img src="<?php the_field('service_icon'); ?>">
+          </div>
+          <div class="service_text">
           <h3><?php the_title(); ?></h3>
           <a href="<?php echo get_permalink(); ?>" class="btn">See service</a>
+          </div>
 				</div>
       <?php endwhile; ?>
     </div>
