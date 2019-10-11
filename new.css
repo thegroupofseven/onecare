@@ -429,13 +429,14 @@ a.btn {
     font-size: 18px; }
 
 .single_service .more_info {
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  border-radius: 3px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
   background: #fcdce5;
   margin: 20px 0px;
-  padding: 20px; }
+  padding: 20px;
+  overflow: hidden; }
 
 .single_service h1 {
   margin-bottom: 40px; }
@@ -444,6 +445,22 @@ a.btn {
   border-bottom: 1px solid #574658;
   margin-bottom: 20px;
   padding-bottom: 10px; }
+
+.single_service h3 {
+  font-size: 22px; }
+
+.single_service .quote {
+  margin-top: 60px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  margin-left: 0%;
+  background: #ec1550;
+  padding: 40px;
+  color: #fff; }
+  .single_service .quote blockquote {
+    margin: 0px 0px 20px 0px; }
 
 ul.benefits {
   margin-bottom: 20px;

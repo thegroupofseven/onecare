@@ -562,10 +562,11 @@ a.btn {
     }
   } 
   .more_info {
-    @include border-radius(3px);
+    @include border-radius(5px);
     background: #fcdce5;
     margin: 20px 0px;
     padding: 20px;
+    overflow: hidden;
   }
   h1 {
     margin-bottom: 40px;
@@ -574,6 +575,20 @@ a.btn {
     border-bottom: 1px solid #574658;
     margin-bottom: 20px;
     padding-bottom: 10px;
+  }
+  h3 {
+    font-size: 22px;
+  }
+  .quote {
+    margin-top: 60px;
+    @include border-radius(5px);
+    margin-left: 0%;
+    background: $red;
+    padding: 40px;
+    color: $white;
+    blockquote {
+      margin: 0px 0px 20px 0px;
+    }
   }
 }
 

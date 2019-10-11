@@ -22,12 +22,12 @@ get_header(); ?>
 <section class="single_service">
   <div class="container">
     <div class="three columns">
-			<a href="<?php echo get_site_url(); ?>/services" class="back">Back to services</a>
+			<a href="<?php echo get_site_url(); ?>/services" class="back">< Back to services</a>
       <?php       
         query_posts(array( 
           'post_type' => 'services',
           'showposts' => -1,
-          'orderby'   => 'rand',
+          'orderby'   => 'title',
           'order'     => 'ASC',
           'tax_query' => array(
               array(
@@ -49,7 +49,7 @@ get_header(); ?>
         query_posts(array( 
           'post_type' => 'services',
           'showposts' => -1,
-          'orderby'   => 'rand',
+          'orderby'   => 'title',
           'order'     => 'ASC',
           'tax_query' => array(
               array(
@@ -72,25 +72,40 @@ get_header(); ?>
     <div class="nine columns">
       <h1>Our Services</h1>       
       <h2><?php the_title(); ?></h2>
+      
+      <?php if( get_field('overview') ): ?>
       <h3>Overview</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <?php the_field('overview'); ?>
+      <?php endif; ?>
+           
+      <?php if( have_rows('benefits') ): ?>
       <h3>What are the benefits?</h3>
       <ul class="benefits larger">
-        <li>Lorem ipsum dolor sit amet</li>
-        <li>Consectetur adipisicing elit</li>
-        <li>Sed do eiusmod tempor incididunt ut labore</li>
-        <li>Et dolore magna aliqua. Ut enim ad minim veniam</li>
-        <li>Quis nostrud exercitation ullamco laboris nisi ut aliquip</li>
+      	<?php while( have_rows('benefits') ): the_row(); 
+      		$benefit = get_sub_field('benefit');
+        ?>
+        <li><?php echo $benefit; ?></li>
+      	<?php endwhile; ?>
       </ul>
-      <h3>What's the core offer?</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <h3>Can I access additional paid support?</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <?php endif; ?>
+      
+      <?php the_field('additional_content'); ?>
+      
+      <?php if( get_field('find_out_more') ): ?>
       <div class="more_info">
         <h3>How can I find out more?</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <?php the_field('find_out_more'); ?>
       </div>
-      <?php the_content(); ?>
+      <p>* This service is subject to practices providing One Care with the appropriate Data Sharing Agreements (DSA)</p>
+      <?php endif; ?>
+      
+      <?php if( get_field('quote') ): ?>
+      <div class="quote eight columns">
+        <blockquote><?php the_field('quote'); ?></blockquote>
+        <p class="attribution"><?php the_field('quote_attribution'); ?></p>
+      </div>
+      <?php endif; ?>
+      
     </div>
   </div>
 </section>
