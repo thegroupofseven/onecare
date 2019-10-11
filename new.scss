@@ -180,15 +180,17 @@ section {
 }
 
 a.btn {
+  display: inline-block;
   border: 1px solid #574658;
   @include border-radius(5px);
   color: #574658;
-  padding: 15px 20px;
+  padding: 15px 70px 15px 20px;
   font-size: 18px;
   display: inline-block;
+  background: url('images/button_arrow.svg') no-repeat right 20px center;
   &:hover, &.active {
     border: 1px solid $red;
-    background: $red;
+    background: url('images/button_arrow_white.svg') no-repeat right 20px center $red;
     color: $white;
     &:visited {
       color: $white;
@@ -200,8 +202,9 @@ a.btn {
   &.white {
     border: 1px solid $white;
     color: $white;
+    background: url('images/button_arrow_white.svg') no-repeat right 20px center;
     &:hover {
-      background: $white;
+      background: url('images/button_arrow_blue.svg') no-repeat right 20px center $white;
       color: #0e9899;
       &:visited {
         color: #0e9899;
@@ -251,6 +254,47 @@ a.btn {
   }
   p {
     font-size: 20px;
+    margin-bottom: 40px;
+  }
+  .service_item {
+    padding: 40px 0px 0px 0px;
+    text-align: center;
+    position: relative;
+    a h3 {
+      color: #574759;
+    }
+    h3 {
+      font-size: 18px;
+      margin-bottom: 30px;
+      font-weight: normal;
+    }
+    .paid-for {
+      font-size: 14px;
+      background: $red;
+      display: inline-block;
+      color: $white;
+      padding: 5px 15px;
+      @include border-radius(3px);
+      text-transform: uppercase;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 0px;
+      width: 100px;
+    }
+    .service_icon {
+      img {
+        @include border-radius(50%);
+        border: 1px solid #e4e1e3;
+        width: 125px;
+        padding: 10px;
+        height: auto;
+        margin-bottom: 30px;
+        margin-top: -20px;
+        background: $white;
+        box-shadow: 1px 4px rgba(230, 227, 229, 0.2);
+      }
+    }
   }
 }
 
@@ -293,6 +337,9 @@ a.btn {
   @media (min-width: $breakpoint-tablet) {
   padding: 40px 40px 40px 0px;
   }
+  h3 {
+    font-size: 28px;
+  }
 }
 
 /* Browse */
@@ -305,6 +352,9 @@ a.btn {
     margin-bottom: 0;
     text-align: center;
   }
+  a.btn {
+    float: right;
+  }
 }
 
 
@@ -314,9 +364,11 @@ a.btn {
   .support_slider {
     h3 {
       font-size: 36px;
+      margin-bottom: 20px;
     }
     p {
       font-size: 20px;
+      margin-bottom: 40px;
     }
   }
   .image {
@@ -384,8 +436,9 @@ a.btn {
       
     }
     p {
-      font-size: 18px;
+      font-size: 17px;
       margin-bottom: 40px;
+      font-weight: 100;
     }
     a.btn {
       display: inline-block;
@@ -413,7 +466,7 @@ a.btn {
 }
 
 .service_filter {
-  padding-bottom: 60px;
+  padding-bottom: 100px;
   text-align: center;
   h1 {
     margin-bottom: 20px;
@@ -423,16 +476,32 @@ a.btn {
     font-size: 18px;
     line-height: 32px;
   }
-  a.btn {
+  a.filter_btn {
+    border: 1px solid #574658;
+    @include border-radius(5px);
+    color: #574658;
+    padding: 15px 40px;
     margin: 10px;
+    font-size: 18px;
+    display: inline-block;
+
+    &:hover, &.active {
+      border: 1px solid $red;
+      background: $red;
+      color: $white;
+      &:visited {
+        color: $white;
+      }
+    }
   }
 }
 
 .service_list {
   .service_item {
-    padding: 40px;
+    padding: 40px 20px;
     text-align: center;
-    margin-bottom: 40px;
+    margin-top: 40px;
+    margin-bottom: 80px;
     border: 1px solid #e4e1e3;
     @include border-radius(5px);
     position: relative;
@@ -441,11 +510,12 @@ a.btn {
       margin-left: 0;
     }
     h3 {
-      font-size: 28px;
-      margin-bottom: 20px;
+      font-size: 24px;
+      margin-bottom: 30px;
       font-weight: normal;
     }
     .paid-for {
+      font-size: 14px;
       background: $red;
       display: inline-block;
       color: $white;
@@ -455,17 +525,90 @@ a.btn {
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      top: 20px;
+      top: -90px;
     }
     .service_icon {
-      @include border-radius(50%);
-      border: 1px solid #e4e1e3;
-      height: auto;
-      margin-bottom: 20px;
-      
+      img {
+        @include border-radius(50%);
+        border: 1px solid #e4e1e3;
+        width: 150px;
+        padding: 10px;
+        height: auto;
+        margin-bottom: 30px;
+        margin-top: -115px;
+        background: $white;
+        box-shadow: 1px 4px rgba(230, 227, 229, 0.2);
+      }
     }
     .service_text {
       
+    }
+  }
+}
+.single_service {
+  a.back {
+    margin-bottom: 40px;
+    display: block;
+  }
+  
+  .widget.service {
+    margin-bottom: 40px;
+    &.paid {
+      h4 {
+        color: #58485a;
+        font-weight: bold;
+        font-size: 18px;
+      }
+    }
+  } 
+  .more_info {
+    @include border-radius(3px);
+    background: #fcdce5;
+    margin: 20px 0px;
+    padding: 20px;
+  }
+  h1 {
+    margin-bottom: 40px;
+  }
+  h2 {
+    border-bottom: 1px solid #574658;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+  }
+}
+
+ul.benefits {
+  margin-bottom: 20px;
+  display: inline-block;
+  &.larger {
+    li {
+      padding: 10px 0px 10px 80px;
+    }
+  }
+  li {
+    font-size: 22px;
+    margin: 10px 0px;
+    background: url('images/benefit_list_blue.svg') no-repeat left center;
+    background-size: contain;
+    padding-left: 60px;
+    &:before {
+      content: "";
+    }
+    &:nth-child(2) {
+      background: url('images/benefit_list_red.svg') no-repeat left center;
+      background-size: contain;
+    }
+    &:nth-child(3) {
+      background: url('images/benefit_list_orange.svg') no-repeat left center;
+      background-size: contain;
+    }
+    &:nth-child(4) {
+      background: url('images/benefit_list_green.svg') no-repeat left center;
+      background-size: contain;
+    }
+    &:nth-child(5) {
+      background: url('images/benefit_list_purple.svg') no-repeat left center;
+      background-size: contain;
     }
   }
 }

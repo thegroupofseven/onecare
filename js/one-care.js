@@ -38,6 +38,7 @@ $('.service-scroll').slick({
   ]
 });
 
+/*
 
 // SVG as Images
 $(function(){
@@ -70,3 +71,4 @@ $(function(){
     });
   }
 });
+*/

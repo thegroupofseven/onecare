@@ -49,8 +49,7 @@
 	<!-- Font sizing plus / minus -->
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="<?php get_stylesheet_directory_uri(); ?>/js/slick.min.js"></script>
-	<script src="<?php get_stylesheet_directory_uri(); ?>/js/onecare.js"></script>
+	
 
 	<?php wp_head(); ?>
 </head>

@@ -30,26 +30,30 @@ get_header(); ?>
         <?php       
         query_posts(array( 
           'post_type' => 'services',
-          'showposts' => -1,
+          'showposts' => 6,
+          // 'showposts' => -1,
           'orderby'   => 'rand',
           'order'     => 'ASC',
                 
         ));  
         ?>
-        <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
         <div class="service-scroll">
+        <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
+        
           <?php $icon = get_field('service_icon'); ?>
-          <article>
-            <a href="<?php the_permalink(); ?>">
-            <div class="image">
-              <div class="border">
-              <img src="<?php echo $icon; ?>"/>
-              </div>
+          <?php $terms = get_the_terms( $post->ID, 'type' ); ?>
+          
+          <div class="service_item <?php foreach($terms as $term) { echo $term->slug; } ?> two columns">
+            <a href="<?php echo get_permalink(); ?>">
+            <div class="service_icon">
+              <?php if ($term->slug == "paid") { ?><div class="paid-for">Paid-for</div><?php } ?>
+              <img src="<?php the_field('service_icon'); ?>">
             </div>
-            <div class="content">
-              <h3><?php the_title(); ?></h3>
-            </div></a>
-          </article>
+
+            <h3><?php the_title(); ?></h3>
+            </a>
+  				</div>
+        
         <?php endwhile; ?>
         </div>
         <?php else : endif; wp_reset_query(); ?>
@@ -63,7 +67,14 @@ get_header(); ?>
   <div class="container">
     <div class="reports one-half column">
       <h3>General practice intelligence reports</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <ul class="benefits">
+        <li>Lorem ipsum dolor sit amet</li>
+        <li>Consectetur adipisicing elit</li>
+        <li>Sed do eiusmod tempor incididunt ut labore</li>
+        <li>Et dolore magna aliqua. Ut enim ad minim veniam</li>
+        <li>Quis nostrud exercitation ullamco laboris nisi ut aliquip</li>
+      </ul>
+      <a href="#" class="btn">Find out more</a>
     </div>
     <div class="reports-icon one-half column">
 
@@ -74,7 +85,7 @@ get_header(); ?>
 <section class="browse">
   <div class="container">
     <div class="twelve columns">
-      <p>Browse and compare all of One Care’s primary care network services</p> <a href="<?php echo get_site_url(); ?>/services" class="btn white">See all services</a>
+      <p>Browse and compare all of One Care’s primary care network services <!-- <a href="<?php echo get_site_url(); ?>/services" class="btn white">See all services</a> --></p>
   </div>
 </section>
 <!-- Support -->
@@ -104,7 +115,7 @@ get_header(); ?>
             <div class="content">
               <span class="date"><?php the_time('j F Y'); ?></span>
               <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-              <?php the_excerpt(); ?>
+              <p><?php echo excerpt(25); ?></p>
               <a href="<?php the_permalink(); ?>" class="btn white">Read more</a>
             </div>
           </div>
