@@ -119,21 +119,6 @@ function custom_post_type() {
 // Hook into the 'init' action
 add_action( 'init', 'custom_post_type', 0 );
 
-add_action( 'init', 'create_service_tax' );
-
-function create_service_tax() {
-	register_taxonomy(
-		'type',
-		'services',
-		array(
-			'label' => __( 'Service Type' ),
-			'rewrite' => array( 'slug' => 'type' ),
-			'hierarchical' => true,
-			'show_admin_column' => true,
-		)
-	);
-}
-
 function excerpt($limit) {
       $excerpt = explode(' ', get_the_excerpt(), $limit);
 

@@ -102,6 +102,44 @@
             ]
         },
         {
+            "key": "field_5dadc91c57c89",
+            "label": "Core",
+            "name": "core",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_5dadc92d57c8a",
+            "label": "Paid",
+            "name": "paid",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
             "key": "field_5da05a73d4871",
             "label": "Additional Content",
             "name": "additional_content",
@@ -198,7 +236,7 @@
             "label": "Quote Image",
             "name": "quote_image",
             "type": "select",
-            "instructions": "",
+            "instructions": "Select the image to go alongside the quote",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -206,13 +244,21 @@
                 "class": "",
                 "id": ""
             },
-            "choices": [],
+            "choices": {
+                "nurse": "Nurse",
+                "doctor": "Doctor",
+                "manager": "Manager",
+                "receptionist": "Receptionist",
+                "direct-support": "Support",
+                "patient": "Patient",
+                "patient-alt": "Patient Alt"
+            },
             "default_value": [],
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
-            "ajax": 0,
             "return_format": "value",
+            "ajax": 0,
             "placeholder": ""
         }
     ],
@@ -236,5 +282,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1570790206
+    "modified": 1571672918
 }

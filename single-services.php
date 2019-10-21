@@ -29,39 +29,9 @@ get_header(); ?>
           'showposts' => -1,
           'orderby'   => 'title',
           'order'     => 'ASC',
-          'tax_query' => array(
-              array(
-                'taxonomy' => 'type',
-                'field' => 'term_id',
-                'terms' => 17
-              )
-          ),
         ));  
         ?>
         <ul class="widget service">
-        <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
-          <li><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></li>
-        <?php endwhile; ?>
-        </ul>
-        <?php else : endif; wp_reset_query(); ?>
-        
-        <?php       
-        query_posts(array( 
-          'post_type' => 'services',
-          'showposts' => -1,
-          'orderby'   => 'title',
-          'order'     => 'ASC',
-          'tax_query' => array(
-              array(
-                'taxonomy' => 'type',
-                'field' => 'term_id',
-                'terms' => 16
-              )
-          ),
-        ));  
-        ?>
-        <ul class="widget service paid">
-          <h4>Paid for services:</h4>
         <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
           <li><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></li>
         <?php endwhile; ?>
@@ -89,6 +59,24 @@ get_header(); ?>
       </ul>
       <?php endif; ?>
       
+      <div class="offering row">
+        <?php if( get_field('core') ): ?>
+        <div class="core_offer six columns">
+          <span class="core-btn">Core offer</span>
+          <h3>What’s the core offer?</h3>
+          <?php the_field('core'); ?>
+        </div>
+        <?php endif; ?>
+        
+        <?php if( get_field('paid') ): ?>
+        <div class="paid_offer six columns">
+          <span class="paid-btn">Paid-for</span>
+          <h3>Can I access additional paid support?</h3>
+          <?php the_field('paid'); ?>
+        </div>
+        <?php endif; ?>
+      </div>
+      
       <?php the_field('additional_content'); ?>
       
       <?php if( get_field('find_out_more') ): ?>
@@ -100,9 +88,18 @@ get_header(); ?>
       <?php endif; ?>
       
       <?php if( get_field('quote') ): ?>
+
       <div class="quote eight columns">
         <blockquote><?php the_field('quote'); ?></blockquote>
         <p class="attribution"><?php the_field('quote_attribution'); ?></p>
+      </div>
+      <div class="quote_image four columns">
+        <?php
+        $field = get_field_object( 'quote_image' );
+        $value = $field['value'];
+        $label = $field['choices'][ $value ];
+        ?>
+      <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/<?php echo esc_html($value); ?>.svg" />   
       </div>
       <?php endif; ?>
       

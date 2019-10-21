@@ -24,7 +24,8 @@ get_header(); ?>
     <div class="alignment">
       <div class="eight columns offset-by-two">
         <h3>Our services</h3>
-        <p>Services to practices, primary care networks and localities. Paid-for services are offered to external audiences outside of our core stakeholder group.</p>
+        <p><strong>Each of our services is comprised of a core and premium (paid-for) offer.</strong><br />
+        Practices, primary care networks and localities can access our core services, whilst additional paid support is offered to external audiences outside of our stakeholder group.</p>
       </div>
       <div class="twelve columns">
         <?php       
@@ -41,12 +42,10 @@ get_header(); ?>
         <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
         
           <?php $icon = get_field('service_icon'); ?>
-          <?php $terms = get_the_terms( $post->ID, 'type' ); ?>
           
-          <div class="service_item <?php foreach($terms as $term) { echo $term->slug; } ?> two columns">
+          <div class="service_item two columns">
             <a href="<?php echo get_permalink(); ?>">
             <div class="service_icon">
-              <?php if ($term->slug == "paid") { ?><div class="paid-for">Paid-for</div><?php } ?>
               <img src="<?php the_field('service_icon'); ?>">
             </div>
 

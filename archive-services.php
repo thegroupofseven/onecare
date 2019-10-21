@@ -14,25 +14,26 @@ get_header(); ?>
   <div class="container">
     <div class="service_filter eight columns offset-by-two">
       <h1>Our Services</h1>
-      <p>Services to practices, primary care networks and localities. Paid-for services are offered to external audiences outside of our core stakeholder group.</p>
-      <a href="#" class="filter_btn wide active">All services</a> <a href="#" class="filter_btn wide">Paid-for services</a> <a href="#" class="filter_btn wide">Core service offer</a>
+      <p><strong>Each of our services is comprised of a core and premium (paid-for) offer.</strong><br />
+        Practices, primary care networks and localities can access our core services, whilst additional paid support is offered to external audiences outside of our stakeholder group.</p>
     </div>
     <div class="service_list twelve columns">
+      <div class="row">
       <?php while ( have_posts() ) : the_post(); ?>
       
         <?php $terms = get_the_terms( $post->ID, 'type' ); ?>
-        <div class="service_item <?php foreach($terms as $term) { echo $term->slug; } ?> three columns">
+        <div class="service_item <?php foreach($terms as $term) { echo $term->slug; } ?>">
           
           <div class="service_icon"><a href="<?php echo get_permalink(); ?>">
-            <?php if ($term->slug == "paid") { ?><div class="paid-for">Paid-for</div><?php } ?>
             <img src="<?php the_field('service_icon'); ?>"></a>
           </div>
           <div class="service_text">
           <h3><?php the_title(); ?></h3>
-          <a href="<?php echo get_permalink(); ?>" class="btn">See service</a>
+          <a href="<?php echo get_permalink(); ?>" class="btn">View service</a>
           </div>
 				</div>
       <?php endwhile; ?>
+      </div>
     </div>
     
 	</div>
