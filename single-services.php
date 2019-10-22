@@ -22,8 +22,8 @@ get_header(); ?>
 <section class="single_service">
   <div class="container">
     <div class="three columns">
-			<a href="<?php echo get_site_url(); ?>/services" class="back">< Back to services</a>
-      <?php       
+			<a href="<?php echo get_site_url(); ?>/services" class="back">Back to our services</a>
+      <?php $current_post = $post->ID;
         query_posts(array( 
           'post_type' => 'services',
           'showposts' => -1,
@@ -33,7 +33,7 @@ get_header(); ?>
         ?>
         <ul class="widget service">
         <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
-          <li><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></li>
+          <li <?php if( $current_post == $post->ID ) { echo ' class="current"'; } ?>><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></li>
         <?php endwhile; ?>
         </ul>
         <?php else : endif; wp_reset_query(); ?>
@@ -44,19 +44,23 @@ get_header(); ?>
       <h2><?php the_title(); ?></h2>
       
       <?php if( get_field('overview') ): ?>
+      <div class="overview">
       <h3>Overview</h3>
-      <?php the_field('overview'); ?>
+        <?php the_field('overview'); ?>
+      </div>
       <?php endif; ?>
            
       <?php if( have_rows('benefits') ): ?>
+      <div class="benefits">
       <h3>What are the benefits?</h3>
-      <ul class="benefits larger">
       	<?php while( have_rows('benefits') ): the_row(); 
       		$benefit = get_sub_field('benefit');
         ?>
-        <li><?php echo $benefit; ?></li>
+        <div class="benefit">
+          <span class="icon"><img src="<?php echo the_sub_field('benefit_icon'); ?>" class="svg"></span><div class="benefit_text"><?php echo $benefit; ?></div>
+        </div>
       	<?php endwhile; ?>
-      </ul>
+      </div>
       <?php endif; ?>
       
       <div class="offering row">

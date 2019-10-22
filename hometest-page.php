@@ -43,10 +43,10 @@ get_header(); ?>
         
           <?php $icon = get_field('service_icon'); ?>
           
-          <div class="service_item two columns">
+          <div class="service_item">
             <a href="<?php echo get_permalink(); ?>">
             <div class="service_icon">
-              <img src="<?php the_field('service_icon'); ?>">
+              <img src="<?php the_field('service_icon'); ?>" class="svg">
             </div>
 
             <h3><?php the_title(); ?></h3>
@@ -108,7 +108,7 @@ get_header(); ?>
     <div class="latest-news one-half column">
       <h3>Latest news</h3>
       <div class="news-slider">
-      <?php $args = array('post_type'=> 'post','order' => 'DESC','post_status' => 'publish','posts_per_page'=> 1); query_posts($args); ?>
+      <?php $args = array('post_type'=> 'post','order' => 'DESC','post_status' => 'publish','posts_per_page'=> 5); query_posts($args); ?>
         <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
           <div class="news_item">
             <div class="content">

@@ -25,7 +25,7 @@ get_header(); ?>
         <div class="service_item <?php foreach($terms as $term) { echo $term->slug; } ?>">
           
           <div class="service_icon"><a href="<?php echo get_permalink(); ?>">
-            <img src="<?php the_field('service_icon'); ?>"></a>
+            <img src="<?php the_field('service_icon'); ?>" class="svg"></a>
           </div>
           <div class="service_text">
           <h3><?php the_title(); ?></h3>

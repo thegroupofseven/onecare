@@ -241,7 +241,7 @@ a.btn {
   overflow: visible;
   text-align: center;
   .alignment {
-    padding: 60px 40px;
+    padding: 60px 40px 20px 40px;
     margin-top: -120px;
     background: $white;
     @include border-radius(10px 10px 0px 0px);
@@ -263,6 +263,16 @@ a.btn {
     a h3 {
       color: #574759;
     }
+    a:hover {
+      .service_icon {
+        svg {
+          background: #574759;
+          path {
+            fill: $white;
+          } 
+        }
+      }
+    }
     h3 {
       font-size: 18px;
       margin-bottom: 30px;
@@ -283,18 +293,34 @@ a.btn {
       width: 100px;
     }
     .service_icon {
-      img {
+      svg {
         @include border-radius(50%);
         border: 1px solid #e4e1e3;
         width: 125px;
         padding: 10px;
         height: auto;
-        margin-bottom: 30px;
-        margin-top: -20px;
+        margin: 0px auto 30px auto;
         background: $white;
         box-shadow: 1px 4px rgba(230, 227, 229, 0.2);
       }
     }
+  }
+  .slick-prev {
+    background: url('images/slider_left.svg') center center no-repeat;
+    width: 26px;
+    height: 45px;
+    z-index: 2;
+    top: 44%;
+    left: -25px;
+  }
+  
+  .slick-next {
+    z-index: 2;
+    background: url('images/slider_right.svg') center center no-repeat;
+    width: 26px;
+    height: 45px;
+    top: 44%;
+    right: -25px;
   }
 }
 
@@ -406,6 +432,9 @@ a.btn {
   }
 }
 .news-icon {
+  @media (max-width: $breakpoint-tablet) {
+    display: none;
+  }
   flex: 1;
   z-index: 1;
   padding: 40px;
@@ -417,6 +446,9 @@ a.btn {
   }
 }
 .latest-news {
+  @media (min-width: $breakpoint-tablet) {
+    max-width: 50%;
+  }
   flex: 1;
   z-index: 1;
   color: $white;
@@ -427,13 +459,13 @@ a.btn {
     margin-bottom: 20px;
   }
   .news_item {
+    width: 50%;
     h4 {
       font-size: 24px;
       margin: 10px 0px 20px 0px;
       a {
         color: $white;
       }
-      
     }
     p {
       font-size: 17px;
@@ -443,6 +475,19 @@ a.btn {
     a.btn {
       display: inline-block;
     }
+  }
+  .slick-dots {
+    position: absolute;
+    top: -80px;
+    @media (min-width: $breakpoint-tablet) {
+      top: -100px;
+    }
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: left;
   }
 }
 
@@ -497,7 +542,6 @@ a.btn {
 }
 
 .service_list {
-  
   .row {
     display: flex;
     flex-direction: row;
@@ -532,7 +576,7 @@ a.btn {
       font-weight: normal;
     }
     .service_icon {
-      img {
+      svg {
         @include border-radius(50%);
         border: 1px solid #e4e1e3;
         width: 150px;
@@ -542,6 +586,14 @@ a.btn {
         margin-top: -115px;
         background: $white;
         box-shadow: 1px 4px rgba(230, 227, 229, 0.2);
+      }
+      a:hover {
+        svg {
+          background: #574759;
+          path {
+            fill: $white;
+          }
+        }
       }
     }
     a.btn {
@@ -554,23 +606,28 @@ a.btn {
 }
 .single_service {
   a.back {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    @media (min-width: $breakpoint-tablet) {
+      margin-bottom: 79px;
+    }
     display: block;
+    text-decoration: underline;
+    font-size: 18px;
+    background: url('images/button_arrow_red_left.svg') left center no-repeat;
+    padding-left: 25px;
   }
   
   .widget.service {
     margin-bottom: 40px;
-    &.paid {
-      h4 {
-        color: #58485a;
-        font-weight: bold;
-        font-size: 18px;
-      }
+    li.current a, li:hover a {
+      color: $red;
+      display: block;
+      background: url('images/button_arrow_red.svg') right center no-repeat;
     }
   } 
 
   h1 {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   h2 {
     border-bottom: 1px solid #574658;
@@ -580,11 +637,23 @@ a.btn {
   h3 {
     font-size: 22px;
   }
+  .overview {
+    margin: 40px 0px;
+    p {
+      font-size: 18px;
+    }
+  }
+  .more_info {
+    p {
+      font-size: 18px;
+    }
+  }
   .quote {
-    margin-top: 60px;
+    margin-top: 40px;
     @include border-radius(5px);
     margin-left: 0%;
-    background: #007ac3;
+    background: url('images/quotemarks_top.svg') left 30px top 30px no-repeat,
+                url('images/quotemarks_bottom.svg') right 30px bottom 30px no-repeat #007ac3;
     padding: 40px;
     color: $white;
     blockquote {
@@ -593,7 +662,7 @@ a.btn {
   }
   .quote_image {
     img {
-      margin-top: 60px;
+      margin-top: 40px;
       max-width: 100%;
     }
   }
@@ -675,38 +744,271 @@ a.btn {
   }
 }
 
-ul.benefits {
-  margin-bottom: 20px;
-  display: inline-block;
-  &.larger {
-    li {
-      padding: 10px 0px 10px 80px;
+.benefits {
+  overflow: hidden;
+  h3 {
+    margin-bottom: 30px;
+  }
+  .icon {
+    height: 60px;
+    width: 60px;
+    @include border-radius(50%);
+    background: $red;
+    display: inline-block;
+    float: left;
+    clear: left;
+    position: relative;
+    svg {
+      height: 60px;
+      width: 60px;
+      position: absolute;
+      padding: 7px;
+      path {
+        fill: $white;
+      }
     }
   }
-  li {
-    font-size: 22px;
-    margin: 10px 0px;
-    background: url('images/benefit_list_blue.svg') no-repeat left center;
-    background-size: contain;
-    padding-left: 60px;
-    &:before {
-      content: "";
-    }
+  .benefit_text {
+    font-size: 18px;
+    border-bottom: 1px solid #eceaeb;
+    padding: 14px 0px 24px 0px;
+    margin: 0px  0px 10px 80px;
+  }
+  .benefit {
+    overflow: hidden;
+    width: 100%;
     &:nth-child(2) {
-      background: url('images/benefit_list_red.svg') no-repeat left center;
-      background-size: contain;
+      .icon {
+        background: #007ac3;
+      }
     }
     &:nth-child(3) {
-      background: url('images/benefit_list_orange.svg') no-repeat left center;
-      background-size: contain;
+      .icon {
+        background: $red;
+      }
     }
     &:nth-child(4) {
-      background: url('images/benefit_list_green.svg') no-repeat left center;
-      background-size: contain;
+      .icon {
+        background: #f27022
+      }
     }
     &:nth-child(5) {
-      background: url('images/benefit_list_purple.svg') no-repeat left center;
-      background-size: contain;
+      .icon {
+        background: #0f989a;
+      }
     }
   }
+}
+
+// Slick CSS
+
+/* Slider */
+.slick-slider {
+  position: relative;
+  padding: 0;
+  display: block;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+      touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  &:focus {
+    outline: none;
+  }
+  &.dragging {
+    cursor: pointer;
+    cursor: hand;
+  }
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+     -moz-transform: translate3d(0, 0, 0);
+      -ms-transform: translate3d(0, 0, 0);
+       -o-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  &:before, &:after {
+    display: table;
+    content: '';
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+.slick-slider {
+  margin: 0px;
+}
+.slick-slide {
+  display: none;
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  // padding: 0px 20px;
+  img {
+    display: block;
+  }
+  .slick-loading img {
+    display: none;
+  }
+}
+
+.slick-slide.slick-loading img {
+  display: none;
+}
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+.slick-initialized .slick-slide {
+  display: block;
+}
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+  display: none;
+}
+
+@charset 'UTF-8';
+
+ul {
+  margin: 0;
+}
+
+/* Arrows */
+.slick-prev,
+.slick-next {
+  overflow: visible;
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+  position: absolute;
+  top: 50%;
+  width: 26px;
+  height: 45px;
+  padding: 0;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.slick-prev:hover:before,
+.slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before {
+  opacity: 1;
+}
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before {
+  opacity: 1;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  line-height: 1;
+  opacity: 1;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-next:before {
+  content: '';
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: -50px;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+}
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  margin: 0 6px;
+  padding: 0;
+  cursor: pointer;
+  background: none;
+  border: 1px solid $white;
+  border-radius: 50%;
+  &.slick-active, &:hover {
+    background: $white;
+    border: 1px solid $white;
+  }
+}
+.slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 0px;
+  height: 0px;
+  padding: 0px;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+.slick-dots li button:hover,
+.slick-dots li button:focus {
+  outline: none;
+}
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before {
+  opacity: 1;
+}
+.slick-dots li button:before {
+  font-size: 10px;
+  line-height: 20px;
+  text-align: center;
+  opacity: 1;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+  color: $white;
 }
