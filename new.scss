@@ -260,10 +260,7 @@ a.btn {
     padding: 40px 0px 0px 0px;
     text-align: center;
     position: relative;
-    a h3 {
-      color: #574759;
-    }
-    .slick_current {
+    &.slick-current {
       a {
         .service_icon {
           svg {
@@ -284,6 +281,9 @@ a.btn {
           } 
         }
       }
+    }
+    a h3 {
+      color: #574759;
     }
     h3 {
       font-size: 18px;
@@ -324,6 +324,7 @@ a.btn {
 
 /* Reports */
 .reports-full-width {
+  display: flex;
   position: relative;
   @media (min-width: $breakpoint-tablet) {
     .background {
@@ -345,6 +346,12 @@ a.btn {
   }
 }
 .reports-icon {
+  position: relative;
+  height: 400px;
+  @media (min-width: $breakpoint-tablet) {
+    height: 100%;
+  }
+  flex: 1;
   z-index: 1;
   padding: 40px;
   background: $red;
@@ -352,8 +359,35 @@ a.btn {
   h3 {
     color: $white;
   }
+  svg {
+    @include border-radius(50%);
+    border: 3px solid $white;
+    width: 250px;
+    padding: 20px;
+    height: auto;
+    margin: 0px auto 30px auto;
+    path {
+      fill: $white;
+    }
+  }
+  .shadow {
+    height: 15px;
+    width: 250px;
+    background: #bf2454;
+    @include border-radius(50%);
+    display: block;
+  }
+  .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+  }
 }
 .reports {
+  flex: 1;
   z-index: 1;
   color: #574759;
   background: #f8f8f8;
@@ -362,7 +396,7 @@ a.btn {
   padding: 40px 40px 40px 0px;
   }
   h3 {
-    font-size: 28px;
+    font-size: 34px;
   }
 }
 
@@ -841,6 +875,23 @@ a.btn {
       .icon {
         background: #0f989a;
       }
+    }
+  }
+  &.small {
+    margin: 20px 0px;
+    .icon {
+      height: 50px;
+      width: 50px;
+      svg {
+        height: 50px;
+        width: 50px;
+        padding: 5px;
+      }
+    }
+    .benefit_text {
+      border-bottom: none;
+      padding: 10px 0px 18px 0px;
+      margin: 0px  0px 10px 60px;
     }
   }
 }

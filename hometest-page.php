@@ -62,20 +62,36 @@ get_header(); ?>
 <section class="reports-full-width">
   <div class="background"></div>
   <div class="container">
+    <?php       
+      query_posts(array( 
+        'post_type' => 'services',
+        'showposts' => 1,        
+      ));  
+    ?>
+    <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
     <div class="reports one-half column">
-      <h3>General practice intelligence reports</h3>
-      <ul class="benefits">
-        <li>Lorem ipsum dolor sit amet</li>
-        <li>Consectetur adipisicing elit</li>
-        <li>Sed do eiusmod tempor incididunt ut labore</li>
-        <li>Et dolore magna aliqua. Ut enim ad minim veniam</li>
-        <li>Quis nostrud exercitation ullamco laboris nisi ut aliquip</li>
-      </ul>
-      <a href="#" class="btn">Find out more</a>
+      <?php $icon = get_field('service_icon'); ?>
+      
+      <h3><?php the_title(); ?></h3>
+      <div class="benefits small">
+      <?php while( have_rows('benefits') ): the_row(); 
+      		$benefit = get_sub_field('benefit');
+        ?>
+        <div class="benefit">
+          <span class="icon"><img src="<?php echo the_sub_field('benefit_icon'); ?>" class="svg"></span><div class="benefit_text"><?php echo $benefit; ?></div>
+        </div>
+      <?php endwhile; ?>
+      </div>
+      <a href="<?php the_permalink(); ?>" class="btn">Find out more</a>
     </div>
     <div class="reports-icon one-half column">
-
+      <div class="icon">
+      <img src="<?php the_field('service_icon'); ?>" class="svg">
+      <span class="shadow"></span>
+      </div>
     </div>
+    <?php endwhile; ?>
+    <?php else : endif; wp_reset_query(); ?>
   </div>
 </section>
 <!-- Browse -->

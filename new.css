@@ -178,16 +178,16 @@ a.btn {
     padding: 40px 0px 0px 0px;
     text-align: center;
     position: relative; }
-    .our_services .service_item a h3 {
-      color: #574759; }
-    .our_services .service_item .slick_current a .service_icon svg {
+    .our_services .service_item.slick-current a .service_icon svg {
       background: #574759; }
-      .our_services .service_item .slick_current a .service_icon svg path {
+      .our_services .service_item.slick-current a .service_icon svg path {
         fill: #fff; }
     .our_services .service_item a:hover .service_icon svg {
       background: #574759; }
       .our_services .service_item a:hover .service_icon svg path {
         fill: #fff; }
+    .our_services .service_item a h3 {
+      color: #574759; }
     .our_services .service_item h3 {
       font-size: 18px;
       margin-bottom: 30px;
@@ -221,6 +221,7 @@ a.btn {
 
 /* Reports */
 .reports-full-width {
+  display: flex;
   position: relative; }
   @media (min-width: 768px) {
     .reports-full-width .background {
@@ -238,14 +239,49 @@ a.btn {
       padding: 0; } }
 
 .reports-icon {
+  position: relative;
+  height: 400px;
+  flex: 1;
   z-index: 1;
   padding: 40px;
   background: #ec1550;
   color: #fff; }
+  @media (min-width: 768px) {
+    .reports-icon {
+      height: 100%; } }
   .reports-icon h3 {
     color: #fff; }
+  .reports-icon svg {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    width: 250px;
+    padding: 20px;
+    height: auto;
+    margin: 0px auto 30px auto; }
+    .reports-icon svg path {
+      fill: #fff; }
+  .reports-icon .shadow {
+    height: 15px;
+    width: 250px;
+    background: #bf2454;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    display: block; }
+  .reports-icon .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
 
 .reports {
+  flex: 1;
   z-index: 1;
   color: #574759;
   background: #f8f8f8;
@@ -254,7 +290,7 @@ a.btn {
     .reports {
       padding: 40px 40px 40px 0px; } }
   .reports h3 {
-    font-size: 28px; }
+    font-size: 34px; }
 
 /* Browse */
 .browse {
@@ -641,6 +677,19 @@ a.btn {
       background: #f27022; }
     .benefits .benefit:nth-child(5) .icon {
       background: #0f989a; }
+  .benefits.small {
+    margin: 20px 0px; }
+    .benefits.small .icon {
+      height: 50px;
+      width: 50px; }
+      .benefits.small .icon svg {
+        height: 50px;
+        width: 50px;
+        padding: 5px; }
+    .benefits.small .benefit_text {
+      border-bottom: none;
+      padding: 10px 0px 18px 0px;
+      margin: 0px 0px 10px 60px; }
 
 /* Slider */
 .slick-slider {
