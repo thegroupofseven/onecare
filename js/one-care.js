@@ -1,7 +1,7 @@
 $( document ).ready(function() {
   $('.service-scroll').slick({
     arrows: true,
-    autoplay:true,
+    autoplay: false,
     dots: false,
     infinite: true,
     cssEase: 'linear',
@@ -10,21 +10,21 @@ $( document ).ready(function() {
     slidesToScroll: 5,  
     responsive: [
       {
-        breakpoint: 1300,
+        breakpoint: 1100,
         settings: {
           slidesToShow: 4,
           slidesToScroll: 4
         }
       },
       {
-        breakpoint: 1000,
+        breakpoint: 768,
         settings: {
           slidesToShow: 3,
-          slidesToScroll:3
+          slidesToScroll: 3
         }
       },
       {
-        breakpoint: 768,
+        breakpoint: 560,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2
