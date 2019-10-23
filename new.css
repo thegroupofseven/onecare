@@ -133,10 +133,11 @@ a.btn {
     color: #fff;
     background: url("images/button_arrow_white.svg") no-repeat right 20px center; }
     a.btn.white:hover {
-      background: url("images/button_arrow_blue.svg") no-repeat right 20px center #fff;
-      color: #0e9899; }
+      border: 1px solid #ec1550;
+      background: url("images/button_arrow_white.svg") no-repeat right 20px center #ec1550;
+      color: #fff; }
       a.btn.white:hover:visited {
-        color: #0e9899; }
+        color: #fff; }
     a.btn.white:visited {
       color: #fff; }
   a.btn.wide {
@@ -263,6 +264,9 @@ a.btn {
   padding: 40px;
   background: #ec1550;
   color: #fff; }
+  @media (max-width: 768px) {
+    .reports-icon {
+      display: none; } }
   @media (min-width: 768px) {
     .reports-icon {
       height: 100%; } }
@@ -434,7 +438,8 @@ a.btn {
       font-size: 24px;
       margin: 10px 0px 20px 0px; }
       .latest-news .news_item h4 a {
-        color: #fff; }
+        color: #fff;
+        font-weight: bold; }
     .latest-news .news_item p {
       font-size: 17px;
       margin-bottom: 40px;

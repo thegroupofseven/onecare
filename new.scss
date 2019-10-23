@@ -203,10 +203,11 @@ a.btn {
     color: $white;
     background: url('images/button_arrow_white.svg') no-repeat right 20px center;
     &:hover {
-      background: url('images/button_arrow_blue.svg') no-repeat right 20px center $white;
-      color: #0e9899;
+      border: 1px solid $red;
+      background: url('images/button_arrow_white.svg') no-repeat right 20px center $red;
+      color: $white;
       &:visited {
-        color: #0e9899;
+        color: $white;
       }
     }
     &:visited {
@@ -361,6 +362,9 @@ a.btn {
 }
 
 .reports-icon {
+  @media (max-width: $breakpoint-tablet) {
+    display: none; 
+  }
   position: relative;
   height: 400px;
   min-height: 400px;
@@ -565,6 +569,7 @@ a.btn {
       margin: 10px 0px 20px 0px;
       a {
         color: $white;
+        font-weight: bold;
       }
     }
     p {
