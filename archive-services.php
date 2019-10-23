@@ -12,7 +12,7 @@ get_header(); ?>
 <?php if ( have_posts() ) : ?>
 <section class="archive_service">
   <div class="container">
-    <div class="service_filter eight columns offset-by-two">
+    <div class="service_filter ten columns offset-by-one">
       <h1>Our Services</h1>
       <?php the_field('services_content','5'); ?>
     </div>

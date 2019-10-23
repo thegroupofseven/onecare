@@ -170,7 +170,6 @@ $white: #fff;
   -ms-border-radius: $radius;
   border-radius: $radius;
 }
-
 body.home footer {
   margin-top: 0 !important;
 }
@@ -241,7 +240,7 @@ a.btn {
   overflow: visible;
   text-align: center;
   .alignment {
-    padding: 60px 40px 20px 40px;
+    padding: 60px 40px 0px 40px;
     margin-top: -120px;
     background: $white;
     @include border-radius(10px 10px 0px 0px);
@@ -260,16 +259,27 @@ a.btn {
     padding: 40px 0px 0px 0px;
     text-align: center;
     position: relative;
-    &.slick-current {
-      a {
-        .service_icon {
-          svg {
-            background: #574759;
-            path {
-              fill: $white;
-            } 
-          }
+    a.selected {
+      border-bottom: 4px solid #574759;
+      .service_icon {
+        svg {
+          background: #574759;
+          path {
+            fill: $white;
+          } 
         }
+      }
+      &::after {
+        content: "";
+        width: 26px;
+        height: 45px;
+        background: url('images/service_arrow.svg') center center no-repeat;
+        display: block;
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
       }
     }
     a:hover {
@@ -324,8 +334,9 @@ a.btn {
 
 /* Reports */
 .reports-full-width {
-  display: flex;
+  display: none;
   position: relative;
+  overflow: hidden;
   @media (min-width: $breakpoint-tablet) {
     .background {
       background: linear-gradient(90deg, #f8f8f8 50%, $red 50%);
@@ -344,10 +355,15 @@ a.btn {
       padding: 0;
     }
   }
+  &.current {
+    display: flex !important;
+  }
 }
+
 .reports-icon {
   position: relative;
   height: 400px;
+  min-height: 400px;
   @media (min-width: $breakpoint-tablet) {
     height: 100%;
   }
@@ -406,12 +422,18 @@ a.btn {
   color: $white;
   padding: 40px 0px;
   p {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 0;
     text-align: center;
   }
   a.btn {
-    float: right;
+    clear: left;
+    margin-top: 40px;
+    @media (min-width: $breakpoint-tablet) {
+      clear: none;
+      margin-top: 0px;
+      margin-left: 40px;
+    }
   }
 }
 
@@ -440,7 +462,7 @@ a.btn {
       top: 44%;
       left: -5px;
       @media (min-width: $breakpoint-tablet) {
-        left: -25px;
+        left: -15px;
       }
     }
     .slick-next {
@@ -451,7 +473,7 @@ a.btn {
       top: 44%;
       right: -5px;
       @media (min-width: $breakpoint-tablet) {
-        right: -25px;
+        right: -15px;
       }
     }
     .slick-dots {

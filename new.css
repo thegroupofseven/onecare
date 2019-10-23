@@ -160,7 +160,7 @@ a.btn {
   overflow: visible;
   text-align: center; }
   .our_services .alignment {
-    padding: 60px 40px 20px 40px;
+    padding: 60px 40px 0px 40px;
     margin-top: -120px;
     background: #fff;
     -webkit-border-radius: 10px 10px 0px 0px;
@@ -178,10 +178,23 @@ a.btn {
     padding: 40px 0px 0px 0px;
     text-align: center;
     position: relative; }
-    .our_services .service_item.slick-current a .service_icon svg {
-      background: #574759; }
-      .our_services .service_item.slick-current a .service_icon svg path {
-        fill: #fff; }
+    .our_services .service_item a.selected {
+      border-bottom: 4px solid #574759; }
+      .our_services .service_item a.selected .service_icon svg {
+        background: #574759; }
+        .our_services .service_item a.selected .service_icon svg path {
+          fill: #fff; }
+      .our_services .service_item a.selected::after {
+        content: "";
+        width: 26px;
+        height: 45px;
+        background: url("images/service_arrow.svg") center center no-repeat;
+        display: block;
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%); }
     .our_services .service_item a:hover .service_icon svg {
       background: #574759; }
       .our_services .service_item a:hover .service_icon svg path {
@@ -221,8 +234,9 @@ a.btn {
 
 /* Reports */
 .reports-full-width {
-  display: flex;
-  position: relative; }
+  display: none;
+  position: relative;
+  overflow: hidden; }
   @media (min-width: 768px) {
     .reports-full-width .background {
       background: linear-gradient(90deg, #f8f8f8 50%, #ec1550 50%);
@@ -237,10 +251,13 @@ a.btn {
     .reports-full-width .container {
       width: 100%;
       padding: 0; } }
+  .reports-full-width.current {
+    display: flex !important; }
 
 .reports-icon {
   position: relative;
   height: 400px;
+  min-height: 400px;
   flex: 1;
   z-index: 1;
   padding: 40px;
@@ -298,11 +315,17 @@ a.btn {
   color: #fff;
   padding: 40px 0px; }
   .browse p {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 0;
     text-align: center; }
   .browse a.btn {
-    float: right; }
+    clear: left;
+    margin-top: 40px; }
+    @media (min-width: 768px) {
+      .browse a.btn {
+        clear: none;
+        margin-top: 0px;
+        margin-left: 40px; } }
 
 /* Support */
 .support {
@@ -326,7 +349,7 @@ a.btn {
       left: -5px; }
       @media (min-width: 768px) {
         .support .support_slider .slick-prev {
-          left: -25px; } }
+          left: -15px; } }
     .support .support_slider .slick-next {
       z-index: 2;
       background: url("images/slider_right.svg") center center no-repeat;
@@ -336,7 +359,7 @@ a.btn {
       right: -5px; }
       @media (min-width: 768px) {
         .support .support_slider .slick-next {
-          right: -25px; } }
+          right: -15px; } }
     .support .support_slider .slick-dots {
       position: absolute;
       top: -20px;

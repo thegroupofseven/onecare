@@ -5,6 +5,8 @@
  * @subpackage Twenty_Thirteen
  * @since Twenty Thirteen 1.0
  */
+ 
+ $f = new NumberFormatter("en", NumberFormatter::SPELLOUT);
 
 get_header(); ?>
 
@@ -22,17 +24,15 @@ get_header(); ?>
 <section class="our_services">
   <div class="container">
     <div class="alignment">
-      <div class="eight columns offset-by-two">
+      <div class="ten columns offset-by-one">
         <h3>Our services</h3>
         <?php the_field('services_content'); ?>
       </div>
       <div class="twelve columns">
-        <?php       
+        <?php $count = 0; 
         query_posts(array( 
           'post_type' => 'services',
           'showposts' => -1,
-          'orderby'   => 'rand',
-          'order'     => 'ASC',
                 
         ));  
         ?>
@@ -40,9 +40,10 @@ get_header(); ?>
         <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
         
           <?php $icon = get_field('service_icon'); ?>
+          <?php $count++; ?>
           
           <div class="service_item">
-            <a href="<?php echo get_permalink(); ?>">
+            <a href="#<?php echo $f->format($count); ?>" class="service-link <?php echo $f->format($count); ?>">
             <div class="service_icon">
               <img src="<?php the_field('service_icon'); ?>" class="svg">
             </div>
@@ -59,16 +60,18 @@ get_header(); ?>
   </div>
 </section>
 <!-- Reports -->
-<section class="reports-full-width">
-  <div class="background"></div>
-  <div class="container">
-    <?php       
+
+    <?php $count = 0;    
       query_posts(array( 
         'post_type' => 'services',
-        'showposts' => 1,        
+        'showposts' => -1,        
       ));  
     ?>
     <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
+    <?php $count++; ?>
+    <section class="reports-full-width" id="<?php echo $f->format($count); ?>">
+  <div class="background"></div>
+  <div class="container">
     <div class="reports one-half column">
       <?php $icon = get_field('service_icon'); ?>
       
@@ -90,10 +93,11 @@ get_header(); ?>
       <span class="shadow"></span>
       </div>
     </div>
+    </div>
+</section>
     <?php endwhile; ?>
     <?php else : endif; wp_reset_query(); ?>
-  </div>
-</section>
+  
 <!-- Browse -->
 <section class="browse">
   <div class="container">
