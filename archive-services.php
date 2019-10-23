@@ -14,8 +14,7 @@ get_header(); ?>
   <div class="container">
     <div class="service_filter eight columns offset-by-two">
       <h1>Our Services</h1>
-      <p><strong>Each of our services is comprised of a core and premium (paid-for) offer.</strong><br />
-        Practices, primary care networks and localities can access our core services, whilst additional paid support is offered to external audiences outside of our stakeholder group.</p>
+      <?php the_field('services_content','5'); ?>
     </div>
     <div class="service_list twelve columns">
       <div class="row">

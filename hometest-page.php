@@ -12,9 +12,9 @@ get_header(); ?>
 <section class="home_header">
   <div class="container">
     <div class="five columns">
-      <h2>We’ve re-launched our programme of practice and primary care services</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a href="<?php echo get_site_url(); ?>/services" class="btn white">About services</a>
+      <h2><?php the_field('hero_title'); ?></h2>
+      <p><?php the_field('hero_content'); ?></p>
+      <a href="<?php the_field('button_link'); ?>" class="btn white"><?php the_field('button_text'); ?></a>
     </div>
   </div>
 </section>
@@ -24,15 +24,13 @@ get_header(); ?>
     <div class="alignment">
       <div class="eight columns offset-by-two">
         <h3>Our services</h3>
-        <p><strong>Each of our services is comprised of a core and premium (paid-for) offer.</strong><br />
-        Practices, primary care networks and localities can access our core services, whilst additional paid support is offered to external audiences outside of our stakeholder group.</p>
+        <?php the_field('services_content'); ?>
       </div>
       <div class="twelve columns">
         <?php       
         query_posts(array( 
           'post_type' => 'services',
-          'showposts' => 6,
-          // 'showposts' => -1,
+          'showposts' => -1,
           'orderby'   => 'rand',
           'order'     => 'ASC',
                 
@@ -84,19 +82,36 @@ get_header(); ?>
 <section class="browse">
   <div class="container">
     <div class="twelve columns">
-      <p>Browse and compare all of One Care’s primary care network services <!-- <a href="<?php echo get_site_url(); ?>/services" class="btn white">See all services</a> --></p>
+      <p>Browse and compare all of One Care’s primary care network services <a href="<?php echo get_site_url(); ?>/services" class="btn white">See all services</a></p>
   </div>
 </section>
 <!-- Support -->
 <section class="support">
   <div class="container">
+    <?php if( have_rows('slide') ): ?>
     <div class="support_slider six columns">
-      <h3>Direct support for primary care networks</h3>
-      <p>Primary Care Networks (PCNs) can access all of One Care’s services, just as individual practices can. We’ve compiled a list of those services which we think are most relevant at PCN level, and described the support services which we offer specifically to PCNs.</p>
-      <a href="#" class="btn">Find out more</a>
+      <?php while( have_rows('slide') ): the_row(); 
+        // vars
+        $title = get_sub_field('slide_title');
+        $content = get_sub_field('slide_content');
+        $link = get_sub_field('slide_link');
+        $button = get_sub_field('slide_button_text');
+		  ?>
+      <div class="support_slide">
+			<h3><?php echo $title; ?></h3>
+      <p><?php echo $content; ?></p>
+      <a href="<?php echo $link; ?>" class="btn"><?php echo $button; ?></a>
+		  </div> 
+    <?php endwhile; ?>
     </div>
+    <?php endif; ?>
     <div class="image six columns">
-      <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/direct-support.svg" />
+      <?php
+        $field = get_field_object( 'illustration' );
+        $value = $field['value'];
+        $label = $field['choices'][ $value ];
+        ?>
+      <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/<?php echo esc_html($value); ?>.svg" />
     </div>
   </div>
 </section>

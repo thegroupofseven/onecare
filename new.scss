@@ -263,6 +263,18 @@ a.btn {
     a h3 {
       color: #574759;
     }
+    .slick_current {
+      a {
+        .service_icon {
+          svg {
+            background: #574759;
+            path {
+              fill: $white;
+            } 
+          }
+        }
+      }
+    }
     a:hover {
       .service_icon {
         svg {
@@ -277,20 +289,6 @@ a.btn {
       font-size: 18px;
       margin-bottom: 30px;
       font-weight: normal;
-    }
-    .paid-for {
-      font-size: 14px;
-      background: $red;
-      display: inline-block;
-      color: $white;
-      padding: 5px 15px;
-      @include border-radius(3px);
-      text-transform: uppercase;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      top: 0px;
-      width: 100px;
     }
     .service_icon {
       svg {
@@ -388,6 +386,7 @@ a.btn {
 .support {
   padding: 60px 0px;
   .support_slider {
+    padding: 40px;
     h3 {
       font-size: 36px;
       margin-bottom: 20px;
@@ -395,6 +394,51 @@ a.btn {
     p {
       font-size: 20px;
       margin-bottom: 40px;
+    }
+    .slide {
+      padding: 40px;
+    }
+    .slick-prev {
+      background: url('images/slider_left.svg') center center no-repeat;
+      width: 26px;
+      height: 45px;
+      z-index: 2;
+      top: 44%;
+      left: -5px;
+      @media (min-width: $breakpoint-tablet) {
+        left: -25px;
+      }
+    }
+    .slick-next {
+      z-index: 2;
+      background: url('images/slider_right.svg') center center no-repeat;
+      width: 26px;
+      height: 45px;
+      top: 44%;
+      right: -5px;
+      @media (min-width: $breakpoint-tablet) {
+        right: -25px;
+      }
+    }
+    .slick-dots {
+      position: absolute;
+      top: -20px;
+      display: block;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      text-align: left;
+      height: 20px;
+      li {
+        border: 1px solid #574658;
+        &:before {
+          content: "";
+        }
+        &.slick-active {
+          background: #574658;
+        }
+      }
     }
   }
   .image {
@@ -488,6 +532,7 @@ a.btn {
     margin: 0;
     list-style: none;
     text-align: left;
+    height: 20px;
   }
 }
 

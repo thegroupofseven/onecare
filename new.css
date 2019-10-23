@@ -180,6 +180,10 @@ a.btn {
     position: relative; }
     .our_services .service_item a h3 {
       color: #574759; }
+    .our_services .service_item .slick_current a .service_icon svg {
+      background: #574759; }
+      .our_services .service_item .slick_current a .service_icon svg path {
+        fill: #fff; }
     .our_services .service_item a:hover .service_icon svg {
       background: #574759; }
       .our_services .service_item a:hover .service_icon svg path {
@@ -188,22 +192,6 @@ a.btn {
       font-size: 18px;
       margin-bottom: 30px;
       font-weight: normal; }
-    .our_services .service_item .paid-for {
-      font-size: 14px;
-      background: #ec1550;
-      display: inline-block;
-      color: #fff;
-      padding: 5px 15px;
-      -webkit-border-radius: 3px;
-      -moz-border-radius: 3px;
-      -ms-border-radius: 3px;
-      border-radius: 3px;
-      text-transform: uppercase;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      top: 0px;
-      width: 100px; }
     .our_services .service_item .service_icon svg {
       -webkit-border-radius: 50%;
       -moz-border-radius: 50%;
@@ -283,12 +271,52 @@ a.btn {
 /* Support */
 .support {
   padding: 60px 0px; }
-  .support .support_slider h3 {
-    font-size: 36px;
-    margin-bottom: 20px; }
-  .support .support_slider p {
-    font-size: 20px;
-    margin-bottom: 40px; }
+  .support .support_slider {
+    padding: 40px; }
+    .support .support_slider h3 {
+      font-size: 36px;
+      margin-bottom: 20px; }
+    .support .support_slider p {
+      font-size: 20px;
+      margin-bottom: 40px; }
+    .support .support_slider .slide {
+      padding: 40px; }
+    .support .support_slider .slick-prev {
+      background: url("images/slider_left.svg") center center no-repeat;
+      width: 26px;
+      height: 45px;
+      z-index: 2;
+      top: 44%;
+      left: -5px; }
+      @media (min-width: 768px) {
+        .support .support_slider .slick-prev {
+          left: -25px; } }
+    .support .support_slider .slick-next {
+      z-index: 2;
+      background: url("images/slider_right.svg") center center no-repeat;
+      width: 26px;
+      height: 45px;
+      top: 44%;
+      right: -5px; }
+      @media (min-width: 768px) {
+        .support .support_slider .slick-next {
+          right: -25px; } }
+    .support .support_slider .slick-dots {
+      position: absolute;
+      top: -20px;
+      display: block;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      text-align: left;
+      height: 20px; }
+      .support .support_slider .slick-dots li {
+        border: 1px solid #574658; }
+        .support .support_slider .slick-dots li:before {
+          content: ""; }
+        .support .support_slider .slick-dots li.slick-active {
+          background: #574658; }
   .support .image {
     text-align: center; }
     .support .image img {
@@ -362,7 +390,8 @@ a.btn {
     padding: 0;
     margin: 0;
     list-style: none;
-    text-align: left; }
+    text-align: left;
+    height: 20px; }
     @media (min-width: 768px) {
       .latest-news .slick-dots {
         top: -100px; } }
