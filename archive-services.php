@@ -27,8 +27,10 @@ get_header(); ?>
             <img src="<?php the_field('service_icon'); ?>" class="svg"></a>
           </div>
           <div class="service_text">
-          <h3><?php the_title(); ?></h3>
-          <a href="<?php echo get_permalink(); ?>" class="btn">View service</a>
+            <h3><?php the_title(); ?></h3>
+          </div>
+          <div class="service_button">
+            <a href="<?php echo get_permalink(); ?>" class="btn">View service</a>
           </div>
 				</div>
       <?php endwhile; ?>

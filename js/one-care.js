@@ -6,17 +6,16 @@ $( document ).ready(function() {
     $(".reports-full-width#one").addClass('current');
   });
 
-    $(".service-link").on("click", function(){
-      $(this).addClass("slick-current");
-      $(this).siblings().removeClass("slick-current");
-        var href = $(this).attr('href');
-        console.log(href);
-        
-        
-        $(href).addClass('current');
-        $(href).siblings().removeClass("current");
-        
-     });
+  $(".service-link").on("click", function(){
+    $(this).addClass("slick-current");
+    $(this).siblings().removeClass("slick-current");
+      var href = $(this).attr('href');
+      console.log(href);
+      
+      $(href).addClass('current');
+      $(href).siblings().removeClass("current");
+      
+   });
   
   $('.service-scroll').slick({
     arrows: true,

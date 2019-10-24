@@ -185,6 +185,7 @@ a.btn {
   color: #574658;
   padding: 15px 70px 15px 20px;
   font-size: 18px;
+  font-weight: 900 !important;
   display: inline-block;
   background: url('images/button_arrow.svg') no-repeat right 20px center;
   &:hover, &.active {
@@ -222,12 +223,20 @@ a.btn {
 /* Header */
 .home_header {
   color: $white;
-  padding: 120px 0px 240px 0px;
-  background: url('images/header.svg') center bottom no-repeat;
+  padding: 20px 0px 335px 0px;
+  background: #0e9899 url('images/header_mobile.svg') center bottom 65px no-repeat;
+  @media (min-width: $breakpoint-tablet) {
+    padding: 120px 0px 240px 0px;
+    background: url('images/header.svg') center bottom no-repeat;
+  }
   h2 {
-    font-size: 32px;
     color: $white;
-    margin-bottom: 30px;
+    font-size: 26px;
+    margin-bottom: 20px;
+    @media (min-width: $breakpoint-tablet) {
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
   }
   p {
     font-size: 20px;
@@ -241,7 +250,10 @@ a.btn {
   overflow: visible;
   text-align: center;
   .alignment {
-    padding: 60px 40px 0px 40px;
+    padding: 30px 30px 0px 30px;
+    @media (min-width: $breakpoint-tablet) {
+      padding: 60px 40px 0px 40px;
+    }
     margin-top: -120px;
     background: $white;
     @include border-radius(10px 10px 0px 0px);
@@ -249,8 +261,12 @@ a.btn {
   }
   
   h3 {
-  font-size: 36px;
-  margin-bottom: 30px;
+    font-size: 22px !important;
+    margin-bottom: 20px;
+    @media (min-width: $breakpoint-tablet) {
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
   }
   p {
     font-size: 20px;
@@ -567,15 +583,16 @@ a.btn {
     h4 {
       font-size: 24px;
       margin: 10px 0px 20px 0px;
+      font-weight: 700;
       a {
         color: $white;
-        font-weight: bold;
+        font-weight: 700;
       }
     }
     p {
       font-size: 17px;
       margin-bottom: 40px;
-      font-weight: 100;
+      font-weight: 400;
     }
     a.btn {
       display: inline-block;
@@ -625,7 +642,6 @@ a.btn {
   p {
     margin-bottom: 20px;
     font-size: 18px;
-    line-height: 32px;
   }
   a.filter_btn {
     border: 1px solid #574658;
@@ -652,6 +668,7 @@ a.btn {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: flex-start;
   }
   .service_item {
     width: 100%;
@@ -659,6 +676,8 @@ a.btn {
     @media (min-width: $breakpoint-tablet) {
       width: 48%;
       margin: 40px 1% 80px 1%;
+      display: flex;
+      flex-flow: column nowrap;
     }
     @media (min-width: $breakpoint-laptop) {
       width: 31.3%;
@@ -672,10 +691,6 @@ a.btn {
     border: 1px solid #e4e1e3;
     @include border-radius(5px);
     position: relative;
-    &:after {
-      content: "";
-      flex: auto;
-    }
     h3 {
       font-size: 24px;
       margin-bottom: 30px;
@@ -702,11 +717,11 @@ a.btn {
         }
       }
     }
-    a.btn {
-
-    }
     .service_text {
-      
+      flex-grow: 1;
+    }
+    .service_button {
+      margin-top:auto;
     }
   }
 }
@@ -762,11 +777,30 @@ a.btn {
                 url('images/quotemarks_bottom.svg') right 30px bottom 30px no-repeat #007ac3;
     padding: 40px;
     color: $white;
+    position: relative;
+      &::after {
+        content: "";
+        width: 26px;
+        height: 26px;
+        display: block;
+        position: absolute;
+        background: url('images/quote_bottom.svg') center center no-repeat;
+        @media (max-width: $breakpoint-tablet) {
+          bottom: -26px;
+          left: 60px;
+        }
+        @media (min-width: $breakpoint-tablet) {
+          background: url('images/quote_right.svg') center center no-repeat;
+          right: -26px;
+          top: 60px;
+        }
+      }
     blockquote {
       margin: 0px 0px 20px 0px;
     }
   }
   .quote_image {
+    text-align: center;
     img {
       margin-top: 40px;
       max-width: 100%;
@@ -883,24 +917,27 @@ a.btn {
   .benefit {
     overflow: hidden;
     width: 100%;
-    &:nth-child(2) {
-      .icon {
-        background: #007ac3;
-      }
+    .icon {
+      background: #007ac3;
     }
-    &:nth-child(3) {
+    &:nth-child(2) {
       .icon {
         background: $red;
       }
     }
-    &:nth-child(4) {
+    &:nth-child(3) {
       .icon {
         background: #f27022
       }
     }
-    &:nth-child(5) {
+    &:nth-child(4) {
       .icon {
         background: #0f989a;
+      }
+    }
+    &:nth-child(5) {
+      .icon {
+        background: #a72f8d;
       }
     }
   }

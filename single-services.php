@@ -88,7 +88,7 @@ get_header(); ?>
         <h3>How can I find out more?</h3>
         <?php the_field('find_out_more'); ?>
       </div>
-      <p>* This service is subject to practices providing One Care with the appropriate Data Sharing Agreements (DSA)</p>
+      <p><?php the_field('footnotes'); ?></p>
       <?php endif; ?>
       
       <?php if( get_field('quote') ): ?>
