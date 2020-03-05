@@ -95,7 +95,7 @@ function custom_post_type() {
 	);
 	$args = array(
 		'label'               => __( 'Services', 'text_domain' ),
-		'description'         => __( 'Moorland Fuels Services', 'text_domain' ),
+		'description'         => __( 'What we do', 'text_domain' ),
 		'labels'              => $labels,
 		'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom fields' ),
 		'hierarchical'        => false,
@@ -111,11 +111,43 @@ function custom_post_type() {
 		'exclude_from_search' => false,
 		'publicly_queryable'  => true,
 		'capability_type'     => 'post',
+		'rewrite' => array('slug' => 'what-we-do','with_front' => false),
 	);
 	register_post_type( 'services', $args );
 
 		
 }
+
+// Let us create Taxonomy for Custom Post Type
+add_action( 'init', 'crunchify_create_deals_custom_taxonomy', 0 );
+ 
+//create a custom taxonomy name it "type" for your posts
+function crunchify_create_deals_custom_taxonomy() {
+ 
+  $labels = array(
+    'name' => _x( 'Type', 'taxonomy general name' ),
+    'singular_name' => _x( 'Type', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Types' ),
+    'all_items' => __( 'All Types' ),
+    'parent_item' => __( 'Parent Type' ),
+    'parent_item_colon' => __( 'Parent Type:' ),
+    'edit_item' => __( 'Edit Type' ), 
+    'update_item' => __( 'Update Type' ),
+    'add_new_item' => __( 'Add New Type' ),
+    'new_item_name' => __( 'New Type Name' ),
+    'menu_name' => __( 'Types' ),
+  ); 	
+ 
+  register_taxonomy('types',array('services'), array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'type' ),
+  ));
+}
+
 // Hook into the 'init' action
 add_action( 'init', 'custom_post_type', 0 );
 

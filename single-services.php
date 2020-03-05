@@ -22,7 +22,7 @@ get_header(); ?>
 <section class="single_service">
   <div class="container">
     <div class="three columns">
-			<a href="<?php echo get_site_url(); ?>/services" class="back">Back to our services</a>
+			<a href="<?php echo get_site_url(); ?>/services" class="back">Back to what we do</a>
       <?php $current_post = $post->ID;
         query_posts(array( 
           'post_type' => 'services',
@@ -40,7 +40,7 @@ get_header(); ?>
     </div>
     
     <div class="nine columns">
-      <h1>Our services</h1>       
+      <h1>What we do</h1>       
       <h2><?php the_title(); ?></h2>
       
       <?php if( get_field('overview') ): ?>
