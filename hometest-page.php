@@ -43,7 +43,7 @@ get_header(); ?>
           <?php $count++; ?>
           
           <div class="service_item">
-            <a href="#<?php echo $f->format($count); ?>" class="service-link <?php echo $f->format($count); ?>">
+            <a href="<?php the_permalink(); ?>" class="service-link <?php echo $f->format($count); ?>">
             <div class="service_icon">
               <img src="<?php the_field('service_icon'); ?>" class="svg">
             </div>
@@ -54,12 +54,14 @@ get_header(); ?>
         
         <?php endwhile; ?>
         </div>
+        <div class="all">
+          <a href="#" class="btn">See all</a>
         <?php else : endif; wp_reset_query(); ?>
       </div>
     </div>
   </div>
 </section>
-<!-- Reports -->
+<!-- Reports
 
     <?php $count = 0;    
       query_posts(array( 
@@ -97,15 +99,18 @@ get_header(); ?>
 </section>
     <?php endwhile; ?>
     <?php else : endif; wp_reset_query(); ?>
+    
+-->
   
-<!-- Browse -->
-<!--<section class="browse">
+<!-- Browse 
+<section class="browse">
   <div class="container">
     <div class="twelve columns">
       <p>Browse and compare all of One Care’s primary care network services <a href="<?php echo get_site_url(); ?>/services" class="btn white">See all services</a></p>
   </div>
-</section>-->
-<!-- Support -->
+</section>
+-->
+<!-- Support 
 <section class="support">
   <div class="container">
     <?php if( have_rows('slide') ): ?>
@@ -135,6 +140,8 @@ get_header(); ?>
     </div>
   </div>
 </section>
+-->
+
 <!-- News -->
 <section class="news-full-width">
   <div class="background"></div>
