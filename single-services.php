@@ -40,7 +40,7 @@ get_header(); ?>
     </div>
     
     <div class="nine columns">
-      <h1>Our Services</h1>       
+      <h1>Our services</h1>       
       <h2><?php the_title(); ?></h2>
       
       <?php if( get_field('overview') ): ?>
@@ -63,7 +63,7 @@ get_header(); ?>
       </div>
       <?php endif; ?>
       
-      <div class="offering row">
+      <!--<div class="offering row">
         <?php if( get_field('core') ): ?>
         <div class="core_offer six columns">
           <span class="core-btn">Core offer</span>
@@ -74,12 +74,12 @@ get_header(); ?>
         
         <?php if( get_field('paid') ): ?>
         <div class="paid_offer six columns">
-          <span class="paid-btn">Paid-for</span>
+          <span class="paid-btn">Non-core</span>
           <h3>Can I access additional paid support?</h3>
           <?php the_field('paid'); ?>
         </div>
         <?php endif; ?>
-      </div>
+      </div>-->
       
       <?php the_field('additional_content'); ?>
       

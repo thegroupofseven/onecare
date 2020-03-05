@@ -1,4 +1,4 @@
-<?php /* Template name: Home (V2) */ 
+<?php /* Template name: Home 02/2020 */ 
 
  /*
  * @package WordPress
@@ -25,7 +25,7 @@ get_header(); ?>
   <div class="container">
     <div class="alignment">
       <div class="ten columns offset-by-one">
-        <h3>Our services</h3>
+        <h3>What we do</h3>
         <?php the_field('services_content'); ?>
       </div>
       <div class="twelve columns">
@@ -99,12 +99,12 @@ get_header(); ?>
     <?php else : endif; wp_reset_query(); ?>
   
 <!-- Browse -->
-<section class="browse">
+<!--<section class="browse">
   <div class="container">
     <div class="twelve columns">
       <p>Browse and compare all of One Care’s primary care network services <a href="<?php echo get_site_url(); ?>/services" class="btn white">See all services</a></p>
   </div>
-</section>
+</section>-->
 <!-- Support -->
 <section class="support">
   <div class="container">
@@ -164,7 +164,7 @@ get_header(); ?>
   <div class="container">
     <div class="twelve columns">
       <h3>Find your local practice or surgery</h3>
-      <p>Search for a One Care affiliated practise near you</p>
+      <p>Search for a One Care practice near you</p>
     </div>
   </div>
 </section>

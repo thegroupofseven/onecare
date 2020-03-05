@@ -13,7 +13,7 @@ get_header(); ?>
 <section class="archive_service">
   <div class="container">
     <div class="service_filter ten columns offset-by-one">
-      <h1>Our Services</h1>
+      <h1>Our services</h1>
       <?php the_field('services_content','5'); ?>
     </div>
     <div class="service_list twelve columns">

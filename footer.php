@@ -16,7 +16,7 @@
 			
 			<div id="footer_info_container">
 				<div id="footer_info">
-					<p class="footer_date"><a href="/privacy-policy">Privacy policy</a> &nbsp; | &nbsp; <a href="/terms-and-conditions">Terms and conditions</a> &nbsp; | &nbsp; <a href="/site-map">Site map</a> &nbsp; | &nbsp; <script>document.write(new Date().getFullYear())</script>
+					<p class="footer_date"><a href="/privacy-policy">Privacy policy</a> &nbsp; | &nbsp; <a href="/terms-and-conditions">Terms and conditions</a> &nbsp; | &nbsp; <a href="/site-map">Site map</a> &nbsp; | &nbsp; One Care (BNSSG) C.I.C. © <script>document.write(new Date().getFullYear())</script>.
 </p>
 
 										<div class="search_mobile"><?php get_search_form(); ?></div>
@@ -46,10 +46,10 @@
     								</a>
 							</div>
 					
-					<div class="footer_icon social_icons">
+					<!--<div class="footer_icon social_icons">
    								<a href="https://www.facebook.com/One-Care-BNSSG-Ltd-2051923954868275/" target="_blank"><img src="<?php echo get_site_url(); ?>/wp-content/uploads/2018/12/footer_facebook_icon.png" alt="facebook icon" class="social_icon_image" width="24">
     								</a>
-							</div>
+							</div>-->
 
 						</div>
 						
