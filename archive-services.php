@@ -7,10 +7,12 @@
       <?php the_field('services_content','5'); ?>
     </div>
     <div class="service_list twelve columns">
+      
+      
+      
       <div class="row">
       <?php while ( have_posts() ) : the_post(); ?>
-      <?php $terms = get_the_terms( $post->ID, 'type' ); ?>
-        <div class="service_item <?php foreach($terms as $term) { echo $term->slug; } ?>">
+        <div class="service_item">
           <div class="service_icon"><a href="<?php echo get_permalink(); ?>">
             <img src="<?php the_field('service_icon'); ?>" class="svg"></a>
           </div>

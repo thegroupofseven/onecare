@@ -765,6 +765,65 @@ a.btn {
       padding: 10px 0px 18px 0px;
       margin: 0px 0px 10px 60px; }
 
+.profile_page {
+  padding: 60px 0px; }
+
+.profile_title {
+  text-align: center; }
+  .profile_title h1 {
+    margin-bottom: 20px; }
+  .profile_title p {
+    margin-bottom: 40px;
+    font-size: 18px; }
+
+.profile_list .row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start; }
+
+.profile_list .profile_item {
+  width: 100%;
+  margin: 20px 0 20px 0;
+  flex: 0 1 auto;
+  padding: 10px;
+  text-align: center;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  position: relative; }
+  @media (min-width: 768px) {
+    .profile_list .profile_item {
+      width: 48%;
+      margin: 20px 1% 20px 1%;
+      display: flex;
+      flex-flow: column nowrap; } }
+  @media (min-width: 900px) {
+    .profile_list .profile_item {
+      width: 23%; } }
+  @media (min-width: 1200px) {
+    .profile_list .profile_item {
+      width: 14.5%; } }
+  .profile_list .profile_item h3 {
+    font-size: 16px;
+    margin-bottom: 0px;
+    font-weight: bold; }
+  .profile_list .profile_item p.job_title {
+    color: #ec1550;
+    margin-bottom: 0px; }
+  .profile_list .profile_item p {
+    line-height: 24px; }
+  .profile_list .profile_item img {
+    margin: 0px auto;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 30px; }
+
 /* Slider */
 .slick-slider {
   position: relative;
