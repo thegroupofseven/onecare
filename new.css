@@ -146,15 +146,16 @@ a.btn {
 
 /* Header */
 .home_header {
-  color: #fff;
+  color: #574658;
   padding: 20px 0px 335px 0px;
-  background: #0e9899 url("images/header_mobile.svg") center bottom 65px no-repeat; }
+  background: #d6ecfb url("images/header_mobile_2020.svg") center bottom 20px no-repeat;
+  background-size: cover; }
   @media (min-width: 768px) {
     .home_header {
       padding: 120px 0px 240px 0px;
-      background: url("images/header.svg") center bottom no-repeat; } }
+      background: url("images/header_2020.svg") center bottom no-repeat; } }
   .home_header h2 {
-    color: #fff;
+    color: #574658;
     font-size: 26px;
     margin-bottom: 20px; }
     @media (min-width: 768px) {
@@ -162,6 +163,7 @@ a.btn {
         font-size: 32px;
         margin-bottom: 30px; } }
   .home_header p {
+    color: #574658;
     font-size: 20px;
     margin-bottom: 30px; }
 

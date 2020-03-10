@@ -206,6 +206,7 @@ a.btn {
     &:hover {
       border: 1px solid $red;
       background: url('images/button_arrow_white.svg') no-repeat right 20px center $red;
+      
       color: $white;
       &:visited {
         color: $white;
@@ -222,15 +223,16 @@ a.btn {
 
 /* Header */
 .home_header {
-  color: $white;
+  color: #574658;
   padding: 20px 0px 335px 0px;
-  background: #0e9899 url('images/header_mobile.svg') center bottom 65px no-repeat;
+  background: #d6ecfb url('images/header_mobile_2020.svg') center bottom 20px no-repeat;
+  background-size: cover;
   @media (min-width: $breakpoint-tablet) {
     padding: 120px 0px 240px 0px;
-    background: url('images/header.svg') center bottom no-repeat;
+    background: url('images/header_2020.svg') center bottom no-repeat;
   }
   h2 {
-    color: $white;
+    color: #574658;
     font-size: 26px;
     margin-bottom: 20px;
     @media (min-width: $breakpoint-tablet) {
@@ -239,6 +241,7 @@ a.btn {
     }
   }
   p {
+    color: #574658;
     font-size: 20px;
     margin-bottom: 30px;
   }

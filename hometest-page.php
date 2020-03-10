@@ -16,7 +16,7 @@ get_header(); ?>
     <div class="five columns">
       <h2><?php the_field('hero_title'); ?></h2>
       <p><?php the_field('hero_content'); ?></p>
-      <a href="<?php the_field('button_link'); ?>" class="btn white"><?php the_field('button_text'); ?></a>
+      <a href="<?php the_field('button_link'); ?>" class="btn"><?php the_field('button_text'); ?></a>
     </div>
   </div>
 </section>
