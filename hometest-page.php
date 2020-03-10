@@ -29,34 +29,21 @@ get_header(); ?>
         <?php the_field('services_content'); ?>
       </div>
       <div class="twelve columns">
-        <?php $count = 0; 
-        query_posts(array( 
-          'post_type' => 'services',
-          'showposts' => -1,
-                
-        ));  
-        ?>
         <div class="service-scroll">
-        <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
-        
-          <?php $icon = get_field('service_icon'); ?>
-          <?php $count++; ?>
-          
+        <?php $taxonomy = 'types'; $tax_terms = get_terms($taxonomy); foreach ($tax_terms as $tax_term) { ?>
           <div class="service_item">
-            <a href="<?php the_permalink(); ?>" class="service-link <?php echo $f->format($count); ?>">
+            <a href="<?php echo get_site_url(); ?>/what-we-do/#<?php echo $tax_term->slug; ?>" class="service-link">
             <div class="service_icon">
-              <img src="<?php the_field('service_icon'); ?>" class="svg">
+              <img src="<?php the_field('type_icon', $tax_term); ?>" class="svg" />
             </div>
-
-            <h3><?php the_title(); ?></h3>
+            <h4><?php echo $tax_term->name; ?></h4>
             </a>
   				</div>
-        
-        <?php endwhile; ?>
+        <?php } ?>
         </div>
         <div class="all">
-          <a href="#" class="btn">See all</a>
-        <?php else : endif; wp_reset_query(); ?>
+          <a href="<?php echo get_site_url(); ?>/what-we-do" class="btn">See all</a>
+        <?php wp_reset_query(); ?>
       </div>
     </div>
   </div>

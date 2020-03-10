@@ -22,21 +22,13 @@ get_header(); ?>
 <section class="single_service">
   <div class="container">
     <div class="three columns">
-			<a href="<?php echo get_site_url(); ?>/services" class="back">Back to what we do</a>
-      <?php $current_post = $post->ID;
-        query_posts(array( 
-          'post_type' => 'services',
-          'showposts' => -1,
-          'orderby'   => 'title',
-          'order'     => 'ASC',
-        ));  
-        ?>
-        <ul class="widget service">
-        <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
-          <li <?php if( $current_post == $post->ID ) { echo ' class="current"'; } ?>><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></li>
-        <?php endwhile; ?>
-        </ul>
-        <?php else : endif; wp_reset_query(); ?>
+			<a href="<?php echo get_site_url(); ?>/what-we-do" class="back">Back to What we do</a>
+			<ul class="widget service">
+			<?php $taxonomy = 'types'; $tax_terms = get_terms($taxonomy); foreach ($tax_terms as $tax_term) { ?>
+        <li><a href="<?php echo get_site_url(); ?>/what-we-do/#<?php echo $tax_term->slug; ?>" class="service-link"><?php echo $tax_term->name; ?></a></li>
+      <?php } ?>
+			</ul>
+      
     </div>
     
     <div class="nine columns">

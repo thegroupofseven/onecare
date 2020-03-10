@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_545b5b9aeece4",
-            "label": "Directors",
+            "label": "Team",
             "name": "steering_group",
             "type": "repeater",
             "instructions": "",
@@ -19,7 +19,7 @@
             "min": 0,
             "max": 0,
             "layout": "row",
-            "button_label": "Add Director",
+            "button_label": "Add New",
             "sub_fields": [
                 {
                     "key": "field_545b5be6eece5",
@@ -125,5 +125,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1583763689
+    "modified": 1583854747
 }
