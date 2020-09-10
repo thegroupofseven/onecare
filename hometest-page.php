@@ -153,7 +153,7 @@ get_header(); ?>
     </div>
   </div>
 </section>
-<!-- Map -->
+<!-- *** REMOVE MAP ***
 <section class="map_heading">
   <div class="container">
     <div class="twelve columns">
@@ -162,9 +162,9 @@ get_header(); ?>
     </div>
   </div>
 </section>
-<div id="homepage_map">
-  <?php echo do_shortcode('[gmw_global_map form="1"]'); ?>
-</div>
+<div id="homepage_map">-->
+  <?php # echo do_shortcode('[gmw_global_map form="1"]'); ?>
+<!--</div>-->
 <?php endwhile; wp_reset_query(); ?>
 
 <?php get_footer(); ?>
