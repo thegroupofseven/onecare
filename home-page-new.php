@@ -61,7 +61,7 @@
 
 			  <div class="box">
 
-			    <img src="/wp-content/themes/twentythirteen-child-01/images/channel_shift.png" alt="urgent access" width="292">
+			    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/channel_shift.png" alt="urgent access" width="292">
 
 			    <p><strong>Channel shift</strong></p>
 			    <p>One Care is exploring ways to better match patients to the most appropriate person for their condition.</p>
@@ -71,7 +71,7 @@
 
 			  <div class="box">
 
-			    <img src="/wp-content/themes/twentythirteen-child-01/images/process_improvement.png" alt="urgent access" width="292">
+			    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/process_improvement.png" alt="urgent access" width="292">
 
 			    <p><strong>Process improvement</strong></p>
 			    <p>One Care is working with practices to improve the way they operate and deal with their administration.</p>
@@ -81,7 +81,7 @@
 
 			  <div class="box">
 
-			    <img src="/wp-content/themes/twentythirteen-child-01/images/telephone_access.png" alt="urgent access" width="292">
+			    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/telephone_access.png" alt="urgent access" width="292">
 
 			    <p><strong>Telephone access</strong></p>
 			    <p>One Care is working with practices to make sure that phone calls are answered efficiently and by the right person. The work of One Care will help practices manage busy periods to ensure the best outcomes for their patients.</p>
@@ -90,7 +90,7 @@
 
 			  <div class="box">
 
-			    <img src="/wp-content/themes/twentythirteen-child-01/images/patient_staff_engagement.png" alt="urgent access" width="292">
+			    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/patient_staff_engagement.png" alt="urgent access" width="292">
 
 			    <p><strong>Patient and staff engagement</strong></p>
 			    <p>One Care listens to the patients and staff of its member practices, and welcomes all feedback and comments.
@@ -100,7 +100,7 @@
 
 			  <div class="box">
 
-			    <img src="/wp-content/themes/twentythirteen-child-01/images/self_care_information.png" alt="urgent access" width="292">
+			    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/self_care_information.png" alt="urgent access" width="292">
 
 			    <p><strong>Self-care information</strong></p>
 			    <p>Patients will have access to comprehensive self-care information to help manage their healthcare needs, and may be able to treat their condition without having to contact their practice.</p>
@@ -109,7 +109,7 @@
 
 			  <div class="box">
 
-			    <img src="/wp-content/themes/twentythirteen-child-01/images/video_urgenct_access.png" alt="urgent access" width="292">
+			    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/video_urgenct_access.png" alt="urgent access" width="292">
 
 			    <p><strong>Service access</strong></p>
 			    <p>Thanks to One Care, patients can trust that their practice will be the ‘first port of call’ for advice and treatment, but can be easily directed to other community services when needed.</p>
@@ -119,7 +119,7 @@
 
 			  <div class="box">
 
-			    <img src="/wp-content/themes/twentythirteen-child-01/images/share_patient_record.png" alt="urgent access" width="292">
+			    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share_patient_record.png" alt="urgent access" width="292">
 
 			    <p><strong>Shared patient record</strong></p>
 			    <p>As part of One Care’s ambition to provide innovative and responsive 24/7 primary care, information is to be shared across a number of local healthcare providers.</p>

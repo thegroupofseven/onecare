@@ -582,7 +582,7 @@ a.btn {
       border: 1px solid #e4e1e3;
       width: 50px;
       padding: 5px;
-      height: auto;
+      height: 50px;
       background: #fff;
       box-shadow: 1px 4px rgba(230, 227, 229, 0.2);
       margin-right: 20px; }
@@ -1160,3 +1160,61 @@ ul {
 .slick-dots li.slick-active button:before {
   opacity: 1;
   color: #fff; }
+
+
+// News updates
+.pagination ul {
+  list-style: none;
+}
+
+.pagination ul li {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0;
+  margin: 0 3px;
+  width: auto !important;
+  text-indent: 0;
+}
+
+.pagination ul li a {
+  padding: 5px 10px;
+  background: #EAEAEA;
+  color: #000;
+  display: block;
+}
+
+.pagination ul li.active a {
+  background: #ED1651;
+  color: #fff;
+}
+
+.pagination ul li a:hover {
+  background: #ED1651;
+  color: #fff;
+}
+.pagination ul li::before {
+  content: none;
+}
+
+@media (min-width: 1349px) {
+  .news_layout {
+    width: 1000px !important;
+  }
+  
+  .news_info {
+    width: 65% !important;
+  }
+  .custom-bg {
+    width: 30% !important;
+    margin: 0 5% 0 0 !important;
+    height: 150px !important;
+  }
+}
+@media (max-width: 1349px) and (min-width: 769px) {
+  .news_layout {
+    width: 78% !important;
+  }
+  .custom-bg {
+    height: 150px !important;
+  }
+}

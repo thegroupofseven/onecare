@@ -54,7 +54,7 @@ get_header(); ?>
 								<div class="sfc_service_description">
 									<div class="toggler">
  										<div class="blup" style="display: block;">--><?php the_field('page_content'); ?><!--</div>
-										<img src="/wp-content/themes/twentythirteen-child-01/images/downwards_arrow.png" alt="downward arrow" class="toggler_downwards_arrow" width="20">
+										<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/downwards_arrow.png" alt="downward arrow" class="toggler_downwards_arrow" width="20">
 									</div>
 								</div>-->
 
@@ -67,7 +67,7 @@ get_header(); ?>
 									 <div class="sfc_service_description">
 										<div class="toggler">
  									   		<div class="blup"><?php the_sub_field('description'); ?></div>
-											<img src="/wp-content/themes/twentythirteen-child-01/images/downwards_arrow.png" alt="downward arrow" alt="downward arrow" class="toggler_downwards_arrow" width="20">
+											<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/downwards_arrow.png" alt="downward arrow" alt="downward arrow" class="toggler_downwards_arrow" width="20">
 										</div>
 								 	 </div>
 									</div>

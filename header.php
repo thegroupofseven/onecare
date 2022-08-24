@@ -30,7 +30,7 @@
 	<meta name="author" content="One Care" />
 	<meta name="contact" content="enquiries@onecare.org.uk" />
 	<meta name="copyright" content="Copyright (c)2014 One Care. All Rights Reserved." />
-	<meta name="description" content="The One Care' intentions, plans and job board" />
+	<meta name="description" content="One Care is the GP federation that represents and supports general practice in Bristol, North Somerset and South Gloucestershire." />
 	<meta name="keywords" content="One, Care, NHS, Medical, Healthcare, GP, Clinicians, Jobs" />
 
 	<link rel="profile" href="http://gmpg.org/xfn/11">
@@ -78,7 +78,7 @@
 				<div id="top_navbar_menu">
 					<ul class="top_navbar_list">
 						<!-- <li class="top_navbar_list_bullet"><a href="#">Intranet</a></li> -->
-						<li class="top_navbar_list_bullet"><a href="/press-media">Press / Media</a></li>
+						<!-- <li class="top_navbar_list_bullet"><a href="/press-media">Press / Media</a></li> -->
 						<li class="top_navbar_list_bullet accessibility_tab">Accessibility 
 							<a href="#" id="small">A</a>
     							<a href="#" id="medium" class="selected">A</a>
@@ -91,7 +91,7 @@ function googleTranslateElementInit() {
 </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
         </li>						
 						<?php get_search_form( ); ?>
-						<a href="http://www.england.nhs.uk/ourwork/qual-clin-lead/calltoaction/pm-ext-access/" target="_blank"><img src="<?php echo get_site_url(); ?>/wp-content/uploads/2014/11/NHS-logo.png" alt="The NHS logo" class="nhs_logo" width="54"></a>
+						<a href="https://www.england.nhs.uk/" target="_blank"><img src="<?php echo get_site_url(); ?>/wp-content/uploads/2014/11/NHS-logo.png" alt="The NHS logo" class="nhs_logo" width="54"></a>
 					</ul>
 				</div>
 
@@ -110,10 +110,10 @@ function googleTranslateElementInit() {
 
 					<div id="navbar" class="navbar">
 						<div id="mobile_search">
-							<button class="search_button"><img src="<?php echo get_site_url(); ?>/wp-content/themes/twentythirteen-child-01/images/search_icon.png" alt="Search icon" width="24"></button>
+							<button class="search_button"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/search_icon.png" alt="Search icon" width="24"></button>
 						</div>
 						<div id="mobile_logo">
-							<a href="/"><img src="<?php echo get_site_url(); ?>/wp-content/themes/twentythirteen-child-01/images/one_care_logo_white.png" alt="One Care Logo" width="120" /></a>
+							<a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/one_care_logo_white.png" alt="One Care Logo" width="120" /></a>
 						</div>
 						<nav id="site-navigation" class="navigation main-navigation" role="navigation">
 							<button class="menu-toggle menu_animation mobile_menu_animation"><?php _e( '', 'twentythirteen' ); ?><span></span></button>
@@ -125,7 +125,7 @@ function googleTranslateElementInit() {
    							  <a href="https://twitter.com/onecaretweets" target="_blank"><img src="<?php echo get_site_url(); ?>/wp-content/uploads/2014/10/header_twitter_icon.png" alt="twitter icon" width="24"></a>
 							  <!--<a href="https://www.facebook.com/One-Care-BNSSG-Ltd-2051923954868275/" target="_blank"><img src="<?php echo get_site_url(); ?>/wp-content/uploads/2018/12/header_facebook_icon.png" alt="facebook icon" width="24"></a>-->
 
-							<div class="intranet_mobile"><a href="https://portal.gpteamnet.co.uk/Topics/Public/d2091920-33c1-4a41-9c5c-a80b00a9c4f7" title="TeamNet login" alt="TeamNet login" target="_blank">TeamNet login</a>
+							<div class="intranet_mobile"><a href="https://id.clarity.co.uk/Account/Login" title="TeamNet login" alt="TeamNet login" target="_blank">TeamNet login</a>
 							</div>
 							</div><!-- #mobile_social -->
 							<h2 class="mobile_tagline">Enabling general practice to both survive and thrive</h2>
@@ -134,7 +134,7 @@ function googleTranslateElementInit() {
 						<div id="header_social">
 
 							<div class="intranet_button">
-								<a href="https://portal.gpteamnet.co.uk/Topics/Public/d2091920-33c1-4a41-9c5c-a80b00a9c4f7" title="TeamNet login" alt="TeamNet login" target="_blank">TeamNet login</a>
+								<a href="https://id.clarity.co.uk/Account/Login" title="TeamNet login" alt="TeamNet login" target="_blank">TeamNet login</a>
 							</div>
 						
 							<div class="footer_icon social_icons">
@@ -148,20 +148,16 @@ function googleTranslateElementInit() {
 							</div>
 
 
-							<!-- <div class="footer_icon social_icons">
-   								<a href="/"><img src="/wp-content/uploads/2014/10/header_facebook_icon.png" alt="facebook icon" class="social_icon_image" width="24">
+							<div class="footer_icon social_icons">
+   								<a href="https://www.linkedin.com/company/one-care-bnssg" target="_blank"><img src="<?php echo get_site_url(); ?>/wp-content/uploads/2021/12/header_linkedin_icon.png" alt="linkedin icon" class="social_icon_image" width="24">
     								</a>
-							</div> -->
+							</div>
 
 							<div class="footer_icon social_icons">
    								<a href="https://twitter.com/onecaretweets" target="_blank"><img src="<?php echo get_site_url(); ?>/wp-content/uploads/2014/10/header_twitter_icon.png" alt="twitter icon" class="social_icon_image" width="24">
     								</a>
 							</div>
 							
-							<!--<div class="footer_icon social_icons">
-   								<a href="https://www.facebook.com/One-Care-BNSSG-Ltd-2051923954868275/" target="_blank"><img src="<?php echo get_site_url(); ?>/wp-content/uploads/2018/12/header_facebook_icon.png" alt="facebook icon" class="social_icon_image" width="24">
-    								</a>
-							</div>-->
 
 						</div>
 					</div><!-- #navbar -->

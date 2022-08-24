@@ -36,7 +36,28 @@
       
       </div>
       <?php } ?>
+		
     <?php } ?>
+		<div class="service_item">
+        <div class="tab">
+        <div class="accordionItem close" id="support-across-the-uk">
+          <h3 class="accordionItemHeading">
+            <div class="icon">
+            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2020/03/OC_ICONS_WWD_UK-support.svg" class="svg" />
+            </div>
+            <div class="title">
+              Support across the UK 
+            </div>
+          </h3>
+          <div class="accordionItemContent">
+            <div class="content">
+				<p><a href="<?php echo get_site_url(); ?>/contact">Get in touch</a> if you're a practice, federation or another organisation from outside Bristol, North Somerset and South Gloucestershire and you want to talk about how we might be able to help you.</p> 
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      </div>
     </div>
   </div>
 </section>
