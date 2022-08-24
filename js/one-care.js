@@ -120,7 +120,7 @@ $( document ).ready(function() {
   $("a").on('click', function(event) {
 
     // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
+    if (this.hash !== "" && $(this).attr('href').indexOf(window.location.href) === -1) {
       // Prevent default anchor click behavior
       event.preventDefault();
 
@@ -152,6 +152,18 @@ $( document ).ready(function() {
       if (itemClass == 'accordionItem close') {
           this.parentNode.className = 'accordionItem open';
       }
+  }
+
+
+  // open jobs
+  $('.open-jobs-filter__button--button').on('click', function() {
+    $(this).toggleClass('open-jobs-filter__button--active')
+    $(this).siblings('.open-jobs-filter__button--link').toggleClass('open-jobs-filter__button--visible')
+  })
+
+  // active sidebar item hack
+  if ($('body').hasClass('single-open_jobs') && $('.sidebar-container .menu-get-involved-container')) {
+    $('.sidebar-container .menu-get-involved-container').find('a[href*="work-for-us/vacancies"]').parent().addClass('current-menu-item current_page_item')
   }
 
 });

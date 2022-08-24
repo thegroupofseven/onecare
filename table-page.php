@@ -150,7 +150,7 @@ get_header(); ?>
 
 									      <?php while( have_rows('fitters_details') ): the_row(); ?>
 
-										<p><?php the_sub_field('title'); ?> <?php the_sub_field('name_of_larc_fitter'); ?><span class="price_arrow" ><img src="/wp-content/themes/twentythirteen-child-01/images/doctorarrow.png" width="22" alt="LARC fitter arrow"></span></p>
+										<p><?php the_sub_field('title'); ?> <?php the_sub_field('name_of_larc_fitter'); ?><span class="price_arrow" ><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/doctorarrow.png" width="22" alt="LARC fitter arrow"></span></p>
 
 											<div class="contraceptive_row">
 

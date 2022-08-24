@@ -44,7 +44,7 @@ Template name: Information for patients
 							</div>
 
 							<div id="subpage_content_2">
-								<img src="/wp-content/themes/twentythirteen-child-01/images/what_is_one_care_image.png" alt="What is One Care?" width="460" class="ifp_one_care_image">
+								<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/what_is_one_care_image.png" alt="What is One Care?" width="460" class="ifp_one_care_image">
 							  <div id="subpage_content_2_copy">
 								<?php if(get_field('content_2')): ?>
 	  							  <?php while(the_repeater_field('content_2')): ?>

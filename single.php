@@ -29,7 +29,6 @@ get_header(); ?>
 							<div class="subpage-entry-title-header">
 								<h2 class="single_post_subheader"><?php the_field('page_subheader'); ?></h2>
 								<h1><?php the_title(); ?></h1>
-								<button class="sub_menu_button"></button>
 							</div>
 						</div>
 					</header><!-- .entry-header -->
@@ -37,8 +36,8 @@ get_header(); ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 				<div id="subpage_content_container">
-				  <?php get_sidebar(); ?>
-				  <div id="subpage_content">
+				  <?php // get_sidebar(); ?>
+				  <div id="subpage_content" class="news_layout">
 						<div id="job_description_container">
 
 							<?php 
